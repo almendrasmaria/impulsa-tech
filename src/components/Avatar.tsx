@@ -33,10 +33,10 @@ export default function Avatar({ src, alt = 'Avatar', size = 'md', initials, onE
                     src={src}
                     alt={alt}
                     className={`w-full h-full rounded-full object-cover`}
-                    style={{ border: '1px solid #E5E7EB' }} // igual que el input
+                    style={{ border: '1px solid #D1D5DB' }} 
                 />
             ) : (
-                <div className="w-full h-full rounded-full bg-[#F8F9FC] flex items-center justify-center text-gray-500 font-medium text-lg" style={{ border: '1px solid #E5E7EB' }}>
+                <div className="w-full h-full rounded-full bg-[#F8F9FC] flex items-center justify-center text-gray-500 font-medium text-lg" style={{ border: '1px solid #D1D5DB' }}>
                     {initials ?? '?'}
                 </div>
             )}
@@ -47,7 +47,8 @@ export default function Avatar({ src, alt = 'Avatar', size = 'md', initials, onE
                             type="button"
                             onClick={onEdit}
                             title="Editar avatar"
-                            className="absolute top-2 right-2 bg-white border border-gray-200 rounded-full w-8 h-8 md:w-10 md:h-10 flex items-center justify-center shadow hover:bg-gray-100"
+                            className="pencilContainer"
+                            style={{ background: '#fff', border: '2px solid #1829DB', borderRadius: '50%' }}
                         >
                             <span className="text-[#1829DB] text-xs md:text-sm">✎</span>
                         </button>
@@ -57,7 +58,7 @@ export default function Avatar({ src, alt = 'Avatar', size = 'md', initials, onE
                             type="button"
                             onClick={onDelete}
                             title="Eliminar avatar"
-                            className="absolute bottom-2 right-2 bg-white border border-gray-200 rounded-full w-6 h-6 md:w-8 md:h-8 flex items-center justify-center shadow hover:bg-gray-100"
+                            className="pencilContainer"
                         >
                             <span className="text-red-500 text-xs md:text-sm">✕</span>
                         </button>
