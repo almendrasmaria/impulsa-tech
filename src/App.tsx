@@ -1,6 +1,10 @@
+import CompanyProfilePage from './pages/CompanyProfilePage'
+
 function App() {
     return (
-        <h1>Impulsa Tech</h1>
+           <>
+              <CompanyProfilePage />
+           </>
     )
 }
 
