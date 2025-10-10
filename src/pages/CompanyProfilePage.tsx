@@ -3,7 +3,6 @@ import { Button, CompanyContainer } from '../components'
 import MiInformacionEmpresa from '../components/pages/MiInformacionEmpresa'
 import EmpresaHeader from '../components/pages/EmpresaHeader'
 import CrearOferta from '../components/pages/CrearOferta'
-// import CrearOferta from '../components/CrearOferta'
 import styles from '../styles/CompanyProfilePage.module.css'
 
 const TABS = [
@@ -37,9 +36,6 @@ export default function CompanyProfilePage() {
                             avatar={avatar}
                             setAvatar={setAvatar}
                         />
-                        {/* Tabs */}
-
-                        {/* Avatar y header solo en MiInformacionEmpresa */}
                         {/* Tabs */}
                         <div className={`mt-8 py-4 ${styles.tabsDebug}`}>
                             <div className={`w-full ${styles.companyTabs}`}>
