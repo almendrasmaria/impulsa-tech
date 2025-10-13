@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial, sans-serif;
+  background: #f7faff;
+  color: #1a2e5f;
+  padding: 20px;
+  }
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Distribuye espacio entre los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 15px 50px; /* Relleno superior/inferior y a los lados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* */
+    font-family: Arial, sans-serif; /* Fuente genérica similar */
+    background-color: white; /* Fondo blanco */
+    margin-bottom: 20px; /* Añade un espacio de 20px debajo del header*/
+}
+
+
+.nav-menu {
+    display: flex;
+    gap: 30px; /* Espacio entre los enlaces/botones */
+}
+
+.nav-boton{
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    color: #333; /* Color de texto oscuro */
+    font-size: 16px;
+    padding: 5px 10px; /* Relleno para hacerlos áreas de click más grandes */
+    transition: color 0.2s; /* Transición para efectos hover */
+}
+
+.nav-boton:hover {
+    color: #4400ff; /* Cambio de color al pasar el mouse */
+}
+
+.logo img {
+  height: 70px;
+}
+
+.ingresar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+
+.btn-outline {
+  border: 1.5px solid #0a3d91;
+  background: transparent;
+  color: #0a3d91;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.btn-outline:hover {
+  background: #0a3d91;
+  color: white;
+}
+
+  .oferta-detalle {
+    max-width: 1100px;
+    margin: auto;
+  }
+  .encabezado {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+  }
+  .empresa {
+    color: #0a3d91;
+  }
+  .detalles {
+    margin: 10px 0;
+  }
+  .detalle {
+    background: #e6f0ff;
+    color: #0a3d91;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-right: 5px;
+  }
+  
+  .info-extra {
+    color: #555;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  .contenido {
+    display: flex;
+    gap: 20px;
+  }
+  .col-izq {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .col-izq h3 {
+    color: #0a3d91;
+    margin-bottom: 10px;
+  }
+  .col-izq ul {
+    padding-left: 20px;
+  }
+  .col-der { /* Este bloque podria borrarse/modificarse */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .caja-der {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .btn-azul {
+    display: block;
+    width: 100%;
+    background: #0a3d91;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .btn-azul:hover {
+    background: #092c6d;
+  }
+
+  .btn-celeste {
+    display: block;
+    width: 100%;
+    background: #f0f4ff;
+    color: #0a3d91;
+    border: 1px solid #0a3d91;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .btn-celeste:hover {
+    background: #d9e6ff;
+  }
+
+/* --- Estilos para el botón de hamburguesa (oculto por defecto) --- */
+.menu-toggle {
+    display: none; /* Oculto en vista de escritorio */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #0a3d91; /* Color azul para las barras */
+    border-radius: 2px;
+}
+/* La barra del medio es negra, como en la imagen */
+.menu-toggle span:nth-child(2) {
+    background: #333; 
+}
+/* ---------------------------------------------------------------------- */
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 25px;
+    /* Alineación para vista móvil: Botón - Logo - Ingresar */
+    justify-content: space-between;
+  }
+
+  .ingresar {
+    display: none;
+  }
+
+
+  /* Ocultar el menú de navegación por defecto */
+  .nav-menu {
+    display: none; 
+    /* Estilos del menú desplegado (para cuando se le añada la clase 'activo') */
+    flex-direction: column;
+    position: absolute; 
+    top: 90px; /* Ajusta la posición debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    padding: 20px 0; /* Padding lateral se maneja en los botones */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra para el menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros contenidos */
+  }
+
+  /* **CORRECCIÓN:** Estilos para que los enlaces se vean bien en vertical */
+  .nav-menu .nav-boton {
+      width: 100%;
+      padding: 15px 25px; /* Relleno para que el área de click sea grande */
+      border-bottom: 1px solid #f0f4ff; /* Separador sutil */
+  }
+
+  /* Mostrar el menú cuando el JavaScript le añada la clase 'activo' */
+  .nav-menu.activo {
+    display: flex; /* Muestra el menú verticalmente */
+  }
+
+  /* Mostrar el botón de hamburguesa */
+  .menu-toggle {
+    display: flex; /* Lo mostramos en móvil */
+    order: -1; /* Lo mueve a la izquierda del logo */
+    margin-right: 15px; /* Espacio entre el botón y el logo */
+  }
+
+  /* Ajustamos el tamaño del logo si es necesario */
+  .logo img {
+      height: 60px; /* Un poco más pequeño que el default de 70px */
+  }
+
+  .contenido {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .col-der {
+    order: -1; 
+  }
+}
+
+
+@media (max-width: 440px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: relative;
+  }
+  
+    
+  .nav-menu .nav-boton {
+      padding: 12px 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    order: -1; 
+    margin-right: 8px; /* Reducimos el margen con el logo */
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .ingresar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ingresar {
+    display: none;
+  }
+
+  .btn-outline {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+
+  .contenido {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .col-izq,
+  .col-der {
+    width: 100%;
+  }
+
+
+  .col-der {
+    order: -1;
+  }
+
+  .caja-der {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p, li, span {
+    font-size: 0.95rem;
+  }
+
+  .detalles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .detalle {
+    margin-right: 0;
+  }
+
+  .info-extra span {
+    display: block;
+    margin-top: 4px;
+  }
+}
