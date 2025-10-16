@@ -11,7 +11,7 @@ body {
   padding: 20px;
   }
 
-.header {
+header {
     display: flex;
     justify-content: space-between; /* Distribuye espacio entre los elementos */
     align-items: center; /* Centra verticalmente los elementos */
