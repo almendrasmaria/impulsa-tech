@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f9fafb;
+  }
+
+hr{
+    border: 1px solid rgb(121, 117, 117);
+    display: flex;
+    width: 100%;
+  }
+
+#contacto-soporte{
+    hr{
+       margin-bottom: 30px;
+       margin-top: 40px;
+    }
+    .imagen{
+      margin-left: 100px;
+      margin-top: 100px;
+      padding: 10px;
+    }
+    .file{
+      padding: 3px;
+      margin: 5px 0px
+    }
+
+    input{
+      margin-top: 5px;
+      margin-bottom: 20px;
+    }
+
+
+    .contenedor{
+      margin-left: 10vw;
+      margin-right: 10vw;
+      margin-top: 200px;
+      padding: 5%;
+    }
+
+    button:hover{
+      background-color: rgb(11, 1, 105);
+    }
+
+    @media (max-width: 1300px){
+        hr{
+          display: flex;
+        }
+        .contenedor{
+          margin-left: 10vw;
+          margin-right: 10vw;
+          margin-top: 200px;
+          padding: 3%;   
+          }
+    
+          form{
+           width: 100%;
+          }
+          }
+}
+
+/* CSS del HTML mensaje-enviado*/
+
+#mensaje-enviado{  
+
+    h1{
+         margin: 0px 20px 40px 0px;
+      }
+    .segundo-contenedor {  
+        padding: 5%;
+      }
+    .contenedor{
+       margin-left: 10vw;
+       margin-right: 10vw;
+       margin-top: 200px;
+        padding: 5%;
+      }
+      .contenedor p{
+          padding: 10px;
+      }
+    a{
+        color: rgb(27, 6, 219);
+    }
+    .imagen{
+      margin-left: 100px;
+      padding-top: 20px;
+    }
+    
+    button{
+      padding: 5px;
+    }
+
+    @media(max-width:740px){
+      .segundo-contenedor{
+        margin-left: 1vw;
+        }
+      button{
+        width: 200px;
+      }
+      h1{
+        justify-content: center;
+        padding: 10px;
+      }
+    }
+}
