@@ -1,9 +1,9 @@
-import { Navbar } from "./components";
+import { Header } from "./components";
 
 function App() {
   return (
     <div className='w-full overflow-hidden'>
-      <Navbar/>
+      <Header/>
     </div>
   );
 }
