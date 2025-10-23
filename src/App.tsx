@@ -1,10 +1,11 @@
-import { Header, About } from "./components";
+import { Header, About, HowItWorks } from "./components";
 
 function App() {
   return (
     <div className='w-full overflow-hidden'>
       <Header/>
       <About/>
+      <HowItWorks/>
     </div>
   );
 }
