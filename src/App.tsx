@@ -1,7 +1,11 @@
+import { Navbar } from "./components";
+
 function App() {
-    return (
-        <h1>Impulsa Tech</h1>
-    )
+  return (
+    <div className='w-full overflow-hidden'>
+      <Navbar/>
+    </div>
+  );
 }
 
-export default App
+export default App;
