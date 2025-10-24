@@ -8,7 +8,7 @@ const Footer = () => {
                         alt="Impulsa Tech"
                         className="object-contain w-[150px] h-[70px] md:w-[180px] md:h-[100px]" 
                     />
-                    <p className="text-gray-400">Es una plataforma dedicada a conectar el talento joven con las oportunidades en el mundo tecnológico.</p>
+                    <p className="text-gray-400">Es una plataforma dedicada a conectar a personas sin experiencia con su primera oportunidad en el mundo tecnológico.</p>
                 </div>
                 <div>
                     <h3 className="text-white text-lg font-bold mb-4 mt-3">Nosotros</h3>
@@ -21,7 +21,7 @@ const Footer = () => {
                 </div>
                 <div className="w-full md:w-1/3">
                     <h3 className="text-white text-lg font-bold mb-4 mt-3">Suscríbete a nuestro boletín</h3>
-                    <p className="text-gray-400 mb-4 max-w-80">Recibe las ultimas oportunidades laborales a tu correo</p>
+                    <p className="text-gray-400 mb-4 max-w-80">Recibe las últimas oportunidades laborales en tu correo.</p>
                     <div className="flex gap-2">
                         <input 
                             type="email" 
