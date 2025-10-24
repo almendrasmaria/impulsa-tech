@@ -26,7 +26,7 @@ const Navbar = () => {
                 <ul className="hidden md:flex gap-7 text-white ml-auto mr-6">
                     <a href="#Header" className="cursor-pointer hover:text-[#84B3FF] transition-colors">Inicio</a>
                     <a href="#" className="cursor-pointer hover:text-[#84B3FF] transition-colors">Oportunidades</a>
-                    <a href="#" className="cursor-pointer hover:text-[#84B3FF] transition-colors">Publicar</a>
+                    <a href="#" className="cursor-pointer hover:text-[#84B3FF] transition-colors whitespace-nowrap">Soy Empresa</a>
                 </ul>
                 <button className="hidden md:block bg-white px-8 py-2 rounded-full">Ingresar</button>
                 <FiMenu onClick={() => setShowMobileMenu(true)} className="md:hidden w-7.5 h-auto text-white cursor-pointer" />
@@ -39,8 +39,11 @@ const Navbar = () => {
                 <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
                     <a href="#Header" className="px-4 py-2 rounded-full inline-block">Inicio</a>
                     <a href="#Header" className="px-4 py-2 rounded-full inline-block">Oportunidades</a>
-                    <a href="#Header" className="px-4 py-2 rounded-full inline-block">Publicar</a>
+                    <a href="#Header" className="px-4 py-2 rounded-full inline-block">Soy Empresa</a>
                 </ul>
+                <button className="block md:hidden mt-4 bg-[#2957FF] text-white px-10 py-2 rounded-full font-semibold hover:bg-[#1e46d9] transition mx-auto">
+                    Ingresar
+                </button>
             </div>
         </div>
     )
