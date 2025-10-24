@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import { LuSearch, LuMapPin } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -9,11 +10,18 @@ const Header = () => {
       style={{ backgroundImage: "url('/images/banner.png')" }}
     >
       <Navbar />
-      <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
-        <p className="uppercase font-semibold tracking-wide text-sm md:text-base animate-fade-in">
+
+      <motion.div 
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5 }}
+        viewport={{ once: true }}
+        className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white"
+      >
+        <p className="uppercase font-semibold tracking-wide text-sm md:text-base">
           ÚNETE A <span className="text-[#84B3FF]">IMPULSATECH</span>
         </p>
-        <h1 className="text-3xl sm:text-5xl font-bold mt-2 mb-6 leading-tight animate-fade-in">
+        <h1 className="text-3xl sm:text-5xl font-bold mt-2 mb-6 leading-tight">
           Encuentra tu primer <span className="text-[#84B3FF]">oportunidad</span>
         </h1>
         <div className="w-full max-w-4xl mx-auto rounded-xl p-6 bg-white/10 backdrop-blur-md ring-1 ring-white/20 text-white shadow-lg">
@@ -39,7 +47,7 @@ const Header = () => {
             </button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
