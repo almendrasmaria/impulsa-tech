@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { LuUser, LuBriefcase, LuSearch, LuSend } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 type UserType = "talents" | "companies";
 
@@ -63,7 +64,13 @@ const HowItWorks = () => {
     "text-gray-600 hover:text-gray-900";
 
   return (
-    <div className="container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden">
+    <motion.div 
+      initial={{ opacity: 0, x: -200 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      viewport={{ once: true }}
+      className="container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden"
+    >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
         Cómo <span className="underline underline-offset-4 decoration-1 font-light">Funciona</span>
       </h1>
@@ -105,7 +112,7 @@ const HowItWorks = () => {
           </article>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
 
