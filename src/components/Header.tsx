@@ -9,7 +9,7 @@ const Header = () => {
       className="min-h-screen mb-4 bg-cover bg-center bg-no-repeat flex items-center w-full overflow-hidden"
       style={{ backgroundImage: "url('/images/banner.png')" }}
     >
-      <Navbar />
+      <Navbar variant="dark" />
 
       <motion.div 
         initial={{ opacity: 0, y: 100 }}
