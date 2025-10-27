@@ -1,15 +1,12 @@
-import { Header, About, HowItWorks, Contact, Footer } from "./components";
+import { BrowserRouter } from "react-router-dom";
+import Rutas from "./routes/Rutas";
 
-function App() {
+const App = () => {
   return (
-    <div className='w-full overflow-hidden'>
-      <Header/>
-      <About/>
-      <HowItWorks/>
-      <Contact/>
-      <Footer/> 
-    </div>
+    <BrowserRouter>
+      <Rutas />
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
