@@ -95,7 +95,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ initialData }) => {
                                 name="email"
                                 value={data.email}
                                 onChange={handleChange}
-                                placeholder="contacto@ejemplo.com"
+                                placeholder="Ej: contacto@ejemplo.com"
                                 required
                                 disabled={!editMode}
                             />

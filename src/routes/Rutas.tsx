@@ -14,7 +14,7 @@ const Rutas = () => {
     { path: '/crear-oferta', element: <JobOfferFormPage /> },
     { path: '/mis-ofertas', element: <JobOffersTablePage /> },
     { path: '/postulantes-table', element: <PostulantesTablePage /> },
-    
+    { path: '*', element: <div style={{padding: '4rem', textAlign: 'center'}}>Página no encontrada</div> }
   ]);
   return routes;
 };

@@ -92,7 +92,7 @@ const JobOffersTable: React.FC = () => {
     };
 
     return (
-        <Card className="w-full max-w-3xl mx-auto rounded-2xl shadow-sm p-6 md:p-6 p-2" header="Ofertas laborales" headerClassName="text-left">
+    <Card className="w-full max-w-3xl mx-auto rounded-2xl shadow-sm p-6 md:p-6 p-2" header="Ofertas laborales" headerClassName="text-left font-semibold text-gray-700 text-lg">
             <div className="w-full">
                 <Table>
                     <thead className="hidden md:table-header-group">
@@ -106,7 +106,7 @@ const JobOffersTable: React.FC = () => {
                     <tbody>
                         {jobOffers.map((offer) => (
                             <TableRow key={offer.id} className="bg-white rounded-xl shadow-sm flex flex-col md:table-row mb-4 md:mb-0 max-w-full">
-                                <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
+                                <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words text-gray-700">
                                     <span className="block md:hidden text-xs text-gray-500 mb-1">Título</span>
                                     {offer.title}
                                 </TableCell>

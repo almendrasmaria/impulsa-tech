@@ -1,21 +1,34 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { useToast } from './ToastProvider';
 import Button from './Button';
+import Select from './Select';
 
 const estados = ['En revisión', 'Entrevistado', 'Descartado', 'Seleccionado'];
 
-export interface Postulante {
-    id: number;
-    nombre: string;
-    apellido: string;
-    curriculum: string;
-    estado: string;
-}
-
-interface PostulantesTableProps {
-    postulantes: Postulante[];
-    onEstadoChange: (id: number, nuevoEstado: string) => void;
-}
+const initialPostulantes = [
+    {
+        id: 1,
+        nombre: 'Juan',
+        apellido: 'Pérez',
+        curriculum: 'https://ejemplo.com/cv-juan.pdf',
+        estado: 'En revisión',
+    },
+    {
+        id: 2,
+        nombre: 'María',
+        apellido: 'Gómez',
+        curriculum: 'https://ejemplo.com/cv-maria.pdf',
+        estado: 'Entrevistado',
+    },
+    {
+        id: 3,
+        nombre: 'Carlos',
+        apellido: 'López',
+        curriculum: 'https://ejemplo.com/cv-carlos.pdf',
+        estado: 'Descartado',
+    },
+];
 
 const Table = ({ children }: { children: React.ReactNode }) => (
     <table className="w-full text-left border-separate border-spacing-y-2">{children}</table>
@@ -30,15 +43,17 @@ const TableHeaderCell = ({ children, className }: { children: React.ReactNode; c
     <th className={`py-3 px-4 align-middle font-semibold text-gray-700 text-sm max-w-full break-words ${className || ''}`}>{children}</th>
 );
 
-
-const PostulantesTable: React.FC<PostulantesTableProps> = ({ postulantes, onEstadoChange }) => {
+const PostulantesTable: React.FC = () => {
+    const [postulantes, setPostulantes] = useState(initialPostulantes);
     const { showToast } = useToast();
+
     const handleEstadoChange = (id: number, nuevoEstado: string) => {
-        onEstadoChange(id, nuevoEstado);
+        setPostulantes(postulantes.map(p => p.id === id ? { ...p, estado: nuevoEstado } : p));
         showToast(`Estado actualizado a "${nuevoEstado}"`, 'success');
     };
+
     return (
-    <div className="w-full">
+        <div className="w-full">
             <Table>
                 <thead className="hidden md:table-header-group">
                     <TableRow>
@@ -51,7 +66,7 @@ const PostulantesTable: React.FC<PostulantesTableProps> = ({ postulantes, onEsta
                 <tbody>
                     {postulantes.map(postulante => (
                         <TableRow key={postulante.id} className="bg-white rounded-xl shadow-sm flex flex-col md:table-row mb-4 md:mb-0 max-w-full">
-                            <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
+                            <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words text-gray-700">
                                 <span className="block md:hidden text-xs text-gray-500 mb-1">Nombre y Apellido</span>
                                 {postulante.nombre} {postulante.apellido}
                             </TableCell>
@@ -61,15 +76,16 @@ const PostulantesTable: React.FC<PostulantesTableProps> = ({ postulantes, onEsta
                             </TableCell>
                             <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                 <span className="block md:hidden text-xs text-gray-500 mb-1">Estado</span>
-                                <select
+                                <Select
                                     value={postulante.estado}
                                     onChange={e => handleEstadoChange(postulante.id, e.target.value)}
-                                    className="border rounded px-2 py-1 text-sm"
+                                    className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                                    name="estado"
                                 >
                                     {estados.map(e => (
                                         <option key={e} value={e}>{e}</option>
                                     ))}
-                                </select>
+                                </Select>
                             </TableCell>
                             <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                 <span className="block md:hidden text-xs text-gray-500 mb-1">Acción</span>

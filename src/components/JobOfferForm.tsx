@@ -68,10 +68,10 @@ const JobOfferForm: React.FC = () => {
                                                 value={data.jornada}
                                                 onChange={handleChange}
                                             >
-                                {jornadas.map((j, i) => (
-                                    <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
-                                ))}
-                            </Select>
+                                                {jornadas.map((j, i) => (
+                                                    <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
+                                                ))}
+                                            </Select>
                         </div>
                         <div>
                             <Label htmlFor="modalidad" className="text-left">Modalidad</Label>
@@ -81,10 +81,10 @@ const JobOfferForm: React.FC = () => {
                                                 value={data.modalidad}
                                                 onChange={handleChange}
                                             >
-                                {modalidades.map((m, i) => (
-                                    <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
-                                ))}
-                            </Select>
+                                                {modalidades.map((m, i) => (
+                                                    <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
+                                                ))}
+                                            </Select>
                             <Label htmlFor="seniority" className="mt-4 text-left">Seniority</Label>
                                             <Select
                                                 className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
@@ -92,10 +92,10 @@ const JobOfferForm: React.FC = () => {
                                                 value={data.seniority}
                                                 onChange={handleChange}
                                             >
-                                {seniorities.map((s, i) => (
-                                    <option key={i} value={s}>{s || 'Selecciona seniority'}</option>
-                                ))}
-                            </Select>
+                                                {seniorities.map((s, i) => (
+                                                    <option key={i} value={s}>{s || 'Selecciona seniority'}</option>
+                                                ))}
+                                            </Select>
                         </div>
                     </div>
                                 <div className="my-6 text-left">
