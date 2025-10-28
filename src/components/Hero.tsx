@@ -2,10 +2,9 @@ import Navbar from "./Navbar";
 import { LuSearch, LuMapPin } from "react-icons/lu";
 import { motion } from "framer-motion";
 
-const Header = () => {
+const Hero = () => {
   return (
     <div
-      id="Header"
       className="min-h-screen mb-4 bg-cover bg-center bg-no-repeat flex items-center w-full overflow-hidden"
       style={{ backgroundImage: "url('/images/banner.png')" }}
     >
@@ -52,5 +51,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Hero;
 
