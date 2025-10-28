@@ -4,9 +4,9 @@ import { FiMenu, FiX } from 'react-icons/fi';
 type Variant = 'dark' | 'light';
 
 interface NavbarProps {
-  variant?: Variant;                 
-  logoDarkSrc?: string;              
-  logoLightSrc?: string;            
+  variant?: Variant;
+  logoDarkSrc?: string;
+  logoLightSrc?: string;
 }
 
 const Navbar = ({
@@ -44,8 +44,8 @@ const Navbar = ({
         <button
           className={`hidden md:block px-8 py-2 rounded-full font-semibold transition
           ${isLight
-            ? 'border border-[#2957FF] text-[#2957FF] bg-transparent hover:bg-[#2957FF] hover:text-white'
-            : 'bg-white text-gray-900 hover:bg-gray-100'}`}
+              ? 'border border-[#2957FF] text-[#2957FF] bg-transparent hover:bg-[#2957FF] hover:text-white'
+              : 'bg-white text-gray-900 hover:bg-gray-100'}`}
         >
           Ingresar
         </button>

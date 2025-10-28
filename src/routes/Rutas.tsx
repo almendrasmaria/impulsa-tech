@@ -10,11 +10,11 @@ const Rutas = () => {
   const routes = useRoutes([
     { path: '/', element: <HomePage /> },
     { path: "/oportunidades", element: <OpportunitiesPage /> },
-    { path: '/perfil-empresa', element: <CompanyProfilePage /> },
-    { path: '/crear-oferta', element: <JobOfferFormPage /> },
-    { path: '/mis-ofertas', element: <JobOffersTablePage /> },
-    { path: '/postulantes-table', element: <PostulantesTablePage /> },
-    { path: '*', element: <div style={{padding: '4rem', textAlign: 'center'}}>Página no encontrada</div> }
+    { path: '/empresa', element: <CompanyProfilePage /> },
+    { path: '/oferta', element: <JobOfferFormPage /> },
+    { path: '/ofertas', element: <JobOffersTablePage /> },
+    { path: '/postulantes', element: <PostulantesTablePage /> },
+    { path: '*', element: <div style={{ padding: '4rem', textAlign: 'center' }}>Página no encontrada</div> }
   ]);
   return routes;
 };

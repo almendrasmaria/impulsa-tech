@@ -92,7 +92,7 @@ const JobOffersTable: React.FC = () => {
     };
 
     return (
-    <Card className="w-full max-w-3xl mx-auto rounded-2xl shadow-sm p-6 md:p-6 p-2" header="Ofertas laborales" headerClassName="text-left font-semibold text-gray-700 text-lg">
+        <Card className="w-full max-w-3xl mx-auto rounded-2xl shadow-sm p-6 md:p-6 p-2" header="Ofertas laborales" headerClassName="text-left font-semibold text-gray-700 text-lg">
             <div className="w-full">
                 <Table>
                     <thead className="hidden md:table-header-group">
@@ -123,7 +123,7 @@ const JobOffersTable: React.FC = () => {
                                 <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                     <span className="block md:hidden text-xs text-gray-500 mb-1">Postulantes</span>
                                     <motion.div whileTap={{ scale: 0.92 }} transition={{ type: 'spring', stiffness: 300 }}>
-                                        <Button variant="secondary" onClick={() => navigate('/postulantes-table')}>Ver postulantes</Button>
+                                        <Button variant="secondary" onClick={() => navigate('/postulantes')}>Ver postulantes</Button>
                                     </motion.div>
                                 </TableCell>
                             </TableRow>
