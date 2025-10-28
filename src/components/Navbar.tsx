@@ -37,7 +37,7 @@ const Navbar = ({
 
         <ul className={`hidden md:flex gap-7 ${linkColorDesktop} ml-auto mr-6`}>
           <a href="/" className={linkBase}>Inicio</a>
-          <a href="/Oportunidades" className={linkBase}>Oportunidades</a>
+          <a href="/oportunidades" className={linkBase}>Oportunidades</a>
           <a href="#" className={`${linkBase} whitespace-nowrap`}>Soy Empresa</a>
         </ul>
 
@@ -63,7 +63,7 @@ const Navbar = ({
         </div>
         <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
           <a href="/" className="px-4 py-2 rounded-full inline-block">Inicio</a>
-          <a href="/Oportunidades" className="px-4 py-2 rounded-full inline-block">Oportunidades</a>
+          <a href="/oportunidades" className="px-4 py-2 rounded-full inline-block">Oportunidades</a>
           <a href="#" className="px-4 py-2 rounded-full inline-block">Soy Empresa</a>
         </ul>
         <button className="block md:hidden mt-4 bg-[#2957FF] text-white px-10 py-2 rounded-full font-semibold hover:bg-[#1e46d9] transition mx-auto">
