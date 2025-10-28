@@ -4,7 +4,7 @@ const Footer = () => {
             <div className="container mx-auto flex flex-col md:flex-row justify-between items-start">
                 <div className="w-full md:w-1/3 mb-8 md:mb-0">
                     <img 
-                        src="images/logo.png" 
+                        src="images/logo-light.png" 
                         alt="Impulsa Tech"
                         className="object-contain w-[150px] h-[70px] md:w-[180px] md:h-[100px]" 
                     />
