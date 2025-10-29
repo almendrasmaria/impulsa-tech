@@ -1,7 +1,6 @@
 import CookieAlert from "./components/CookieAlert";
-import CookiesRendimiento from "./components/CookiesRendimiento";
-import CookiesPersonalizacion from "./components/CookiesPersonalizacion";
-import CookiesEsenciales from "./components/CookiesEsenciales";
+import { Link } from "react-router-dom";
+import Switch from "./components/SwitchCookie";
 
 
 
@@ -20,8 +19,13 @@ const Cookie = () => {
             cookies son pequeños archivos que se almacenan en tu dispositivo al
             visitar un sitio web. A través de ellas, podemos recordar tus
             preferencias, analizar el uso del sitio y mostrarte información
-            personalizada. También puedes leer nuestros
-            
+            personalizada. También puedes leer nuestros{" "}
+            <Link
+              to="#" //Agregar para redirigir a Términos y Condiciones
+              className="text-blue-700"
+            >
+              Términos y Condiciones
+            </Link>
             .
           </p>
         </div>
@@ -30,9 +34,53 @@ const Cookie = () => {
         </h2>
 
         <div className="grid-cols-1 place-items-center">
-          <CookiesEsenciales />
-          <CookiesPersonalizacion />
-          <CookiesRendimiento />
+          <div className="w-[60vw] rounded-[10px] p-2 bg-white">
+            <div className="flex justify-between items-center font-bold m-2 ml-3">
+              <p>Cookies Esenciales</p>
+              <button class="bg-blue-700 text-white flex justify-center items-center font-semibold rounded-full h-10 w-[150px]">
+                Activas Siempre
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-gray-100 w-[60vw] mb-8 p-8 rounded-t-xs rounded-b-xl">
+            <p>
+              Son necesarias para el funcionamiento básico de la plataforma ya
+              que permiten iniciar sesión, mantener la seguridad de la cuenta y
+              recordar tus postulaciones.{" "}
+              <b>
+                Estas cookies se instalan de manera automática y no pueden
+                desactivarse.
+              </b>
+            </p>
+          </div>
+          <div className="w-[60vw] rounded-[10px] p-2 bg-white">
+            <div className="flex justify-between items-center font-bold m-3">
+              <p>Cookies de Personalización</p>
+              <Switch />
+            </div>
+          </div>
+          <div className="bg-gray-100 w-[60vw] mb-8 p-8 rounded-t-xs rounded-b-xl">
+            <p>
+              Guardan tus elecciones, como idioma, región o configuraciones de
+              accesibilidad. Mejoran tu experiencia adaptando el sitio a tus
+              necesidades.
+            </p>
+          </div>
+          <div className="w-[60vw] rounded-[10px] p-2 bg-white">
+            <div className="flex justify-between items-center font-bold m-2">
+              <p>Cookies de Rendimiento</p>
+              <Switch />
+            </div>
+          </div>
+
+          <div className="bg-gray-100 w-[60vw] mb-8 p-8 rounded-t-xs rounded-b-xl">
+            <p>
+              Recopilan datos anónimos sobre cómo usás la plataforma (páginas
+              visitadas, tiempo de navegación, errores). Nos permiten mejorar la
+              usabilidad y el rendimiento de nuestro servicio.
+            </p>
+          </div>
         </div>
       </div>
       <CookieAlert />

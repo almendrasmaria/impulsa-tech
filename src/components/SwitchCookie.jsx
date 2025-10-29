@@ -50,7 +50,6 @@ const Slider = styled.span`
   }
 `;
 
-// 3. Componente React para usar el Toggle
 const Switch = () => {
   const [isOn, setIsOn] = useState(false);
 
