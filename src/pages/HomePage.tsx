@@ -1,9 +1,9 @@
-import { Header, About, HowItWorks, Contact, Footer } from "../components";
+import { Hero, About, HowItWorks, Contact, Footer } from "../components";
 
 const HomePage = () => {
   return (
     <div className="w-full overflow-hidden">
-      <Header />
+      <Hero />
       <About />
       <HowItWorks />
       <Contact />
