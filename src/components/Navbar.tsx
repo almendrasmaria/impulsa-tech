@@ -40,7 +40,7 @@ const Navbar = ({
         <img
           src={isLight ? logoLightSrc : logoDarkSrc}
           alt="ImpulsaTech"
-          className="object-contain w-[150px] h-[70px] md:w-[180px] md:h-[100px]"
+          className="object-contain w-[150px] h-[60px] md:w-[180px] md:h-[80px]"
         />
 
         <ul className={`hidden md:flex gap-7 ${linkColorDesktop} ml-auto mr-6`}>
@@ -59,7 +59,7 @@ const Navbar = ({
         >
           Ingresar
         </button>
-        
+
         <button onClick={() => setShowMobileMenu(true)} className={`md:hidden ${menuIconColor}`}>
           <FiMenu className="w-7 h-7" />
         </button>
