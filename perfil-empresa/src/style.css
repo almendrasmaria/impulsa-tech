@@ -1,0 +1,251 @@
+
+body{
+    background-color: #f4f5f8;
+    margin: 0;
+    padding: 0;
+}
+/* Variables para colores */
+:root {
+    --color-principal: #4263f5; /* Azul del botón */
+    --color-fondo-claro: #f4f5f8;
+    --color-borde: #e0e0e0;
+    --color-texto-gris: #555;
+    --color-texto-negro: #1a1a1a;
+    --color-fondo-campo: #f8f8f8;
+}
+
+/* Estilos generales del contenedor principal */
+.perfil-contenedor {
+    margin: 40px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.perfil-titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-texto-negro);
+    margin-bottom: 20px;
+}
+
+/* Estilos de la tarjeta/contenedor principal */
+.perfil-tarjeta {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+/* --- Encabezado y Imagen de Perfil --- */
+.perfil-encabezado {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.perfil-imagen-contenedor {
+    position: relative;
+    margin-right: 20px;
+}
+
+.perfil-imagen {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--color-fondo-claro);
+    border: 1px solid var(--color-borde);
+    /* Opcional: Estilo para simular el placeholder de imagen */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.perfil-editar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-principal);
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.perfil-editar-btn:hover {
+    background-color: #354ee3;
+}
+
+.perfil-nombre-empresa h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--color-texto-negro);
+}
+
+.perfil-nombre-empresa p {
+    font-size: 14px;
+    color: var(--color-texto-gris);
+    margin: 0;
+}
+
+/* --- Navegación (Pestañas) --- */
+.perfil-navegacion {
+    border-bottom: 1px solid var(--color-borde);
+    margin-bottom: 30px;
+}
+
+.pestañas-contenedor {
+    display: flex;
+    position: relative;
+}
+
+.pestaña-btn {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    color: var(--color-texto-gris);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.pestaña-btn:hover {
+    color: var(--color-texto-negro);
+}
+
+.pestaña-btn.activa {
+    color: var(--color-texto-negro);
+    font-weight: 600;
+}
+
+.pestaña-indicador {
+    position: absolute;
+    bottom: -1px; /* Para que quede justo sobre el borde inferior */
+    height: 3px;
+    background-color: var(--color-texto-negro); /* Color de la barra, negro como en la imagen */
+    transition: width 0.3s ease, transform 0.3s ease;
+    /* Inicialmente será manipulado por JS */
+    width: 0;
+    transform: translateX(0);
+}
+
+
+/* --- Formulario de Perfil --- */
+.formulario-perfil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px; /* Espacio vertical y horizontal */
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo-grupo.campo-completo {
+    grid-column: 1 / -1; /* Ocupa ambas columnas */
+}
+
+.campo-grupo label {
+    font-size: 14px;
+    color: var(--color-texto-gris);
+    margin-bottom: 5px;
+}
+
+.formulario-perfil input[type="text"],
+.formulario-perfil input[type="url"],
+.formulario-perfil input[type="email"],
+.formulario-perfil textarea {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    background-color: var(--color-fondo-campo);
+    font-size: 16px;
+    color: var(--color-texto-negro);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
+.formulario-perfil input:focus,
+.formulario-perfil textarea:focus {
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 1px var(--color-principal);
+    outline: none;
+    background-color: white;
+}
+
+/* Estilo del placeholder */
+.formulario-perfil input::placeholder,
+.formulario-perfil textarea::placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+.formulario-perfil textarea {
+    resize: vertical; /* Permite solo redimensionamiento vertical */
+}
+
+/* --- Acciones y Botón de Guardar --- */
+.acciones-perfil {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end; /* Alinear a la derecha */
+    padding-top: 30px;
+    margin-top: 20px;
+    /* Esto es para que el botón esté a la misma altura en el diseño, si solo el contenido de 'informacion' está visible */
+}
+
+.guardar-btn {
+    background-color: var(--color-principal);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    min-width: 180px;
+}
+
+.guardar-btn:hover {
+    background-color: #354ee3;
+}
+
+.guardar-btn:active {
+    transform: scale(0.98);
+}
+
+/* --- Contenido de Pestañas (Mostrar/Ocultar) --- */
+.contenido-pestaña {
+    display: none;
+}
+
+.contenido-pestaña.visible {
+    display: block;
+}
+
+/* Adaptación para pantallas más pequeñas (opcional, pero buena práctica) */
+@media (max-width: 768px) {
+    .formulario-perfil {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+    .perfil-tarjeta {
+        padding: 20px;
+    }
+    .pestaña-btn {
+        margin-right: 15px;
+        font-size: 14px;
+    }
+    .perfil-contenedor {
+        margin: 20px auto;
+    }
+}

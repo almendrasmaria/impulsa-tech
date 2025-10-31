@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Perfil de empresa</title>
+</head>
+<body>
+    <div class="perfil-contenedor">
+    <h1 class="perfil-titulo">Mi perfil</h1>
+    
+    <div class="perfil-tarjeta">
+        <div class="perfil-encabezado">
+            <div class="perfil-imagen-contenedor">
+                <div class="perfil-imagen"></div>
+                <button class="perfil-editar-btn" aria-label="Editar foto de perfil">
+                    <span>&#x270E;</span>
+                </button>
+            </div>
+            <div class="perfil-nombre-empresa">
+                <h2>Fundación Pescar</h2>
+                <p>Organización no gubernamental</p>
+            </div>
+        </div>
+        
+        <div class="perfil-navegacion">
+            <div class="pestañas-contenedor">
+                <button class="pestaña-btn activa" data-pestaña="informacion">Información de empresa</button>
+                <button class="pestaña-btn" data-pestaña="crear">Crear Ofertas</button>
+                <button class="pestaña-btn" data-pestaña="mis">Mis Ofertas</button>
+                <div class="pestaña-indicador"></div> </div>
+        </div>
+        
+        <div class="perfil-contenido">
+            <div id="informacion" class="contenido-pestaña visible">
+                <div class="formulario-perfil">
+                    <div class="campo-grupo">
+                        <label for="nombre-empresa">Nombre</label>
+                        <input type="text" id="nombre-empresa" maxlength="80" placeholder="Ej: Mi Empresa S.A.">
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="industria">Industria</label>
+                        <input type="text" id="industria" maxlength="50" placeholder="Ej: Tecnología, Marketing, ONG">
+                    </div>
+                    
+                    <div class="campo-grupo">
+                        <label for="sitio-web">Sitio web</label>
+                        <input type="url" id="sitio-web" maxlength="150" placeholder="Ej: https://www.miempresa.com">
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="correo-electronico">Correo electrónico</label>
+                        <input type="email" id="correo-electronico" maxlength="100" placeholder="Ej: contacto@miempresa.com">
+                    </div>
+                    
+                    <div class="campo-grupo campo-completo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea id="descripcion" rows="4" maxlength="500" placeholder="Describe brevemente tu empresa o misión (Máx. 500 caracteres)."></textarea>
+                    </div>
+                </div>
+                
+                <div class="acciones-perfil">
+                    <button class="guardar-btn">Guardar cambios</button>
+                </div>
+            </div>
+
+            <div id="crear" class="contenido-pestaña">
+                <p>Aquí irá el formulario para Crear Ofertas.</p>
+            </div>
+            <div id="mis" class="contenido-pestaña">
+                <p>Aquí se mostrarán las Mis Ofertas.</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

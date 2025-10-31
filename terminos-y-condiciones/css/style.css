@@ -1,17 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
- 
 body {
   font-family: Arial, sans-serif;
   background: #f7faff;
   color: #1a2e5f;
   padding: 20px;
-  }
+}
 
-header {
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.header {
     display: flex;
     justify-content: space-between; /* Distribuye espacio entre los elementos */
     align-items: center; /* Centra verticalmente los elementos */
@@ -21,7 +20,6 @@ header {
     background-color: white; /* Fondo blanco */
     margin-bottom: 20px; /* Añade un espacio de 20px debajo del header*/
 }
-
 
 .nav-menu {
     display: flex;
@@ -67,99 +65,15 @@ header {
   color: white;
 }
 
-  .oferta-detalle {
-    max-width: 1100px;
-    margin: auto;
-  }
-  .encabezado {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-  }
-  .empresa {
-    color: #0a3d91;
-  }
-  .detalles {
-    margin: 10px 0;
-  }
-  .detalle {
-    background: #e6f0ff;
-    color: #0a3d91;
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 14px;
-    margin-right: 5px;
-  }
-  
-  .info-extra {
-    color: #555;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  .contenido {
-    display: flex;
-    gap: 20px;
-  }
-  .col-izq {
-    flex: 2;
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  }
-  .col-izq h3 {
-    color: #0a3d91;
-    margin-bottom: 10px;
-  }
-  .col-izq ul {
-    padding-left: 20px;
-  }
-  .col-der { /* Este bloque podria borrarse/modificarse */
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .caja-der {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-  }
-  .btn-azul {
-    display: block;
+.container {
+    background-color: #ffffff; /* Fondo blanco para la caja principal */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px;
     width: 100%;
-    background: #0a3d91;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  .btn-azul:hover {
-    background: #092c6d;
-  }
+}
 
-  .btn-celeste {
-    display: block;
-    width: 100%;
-    background: #f0f4ff;
-    color: #0a3d91;
-    border: 1px solid #0a3d91;
-    padding: 12px;
-    border-radius: 8px;
-    margin-top: 10px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  .btn-celeste:hover {
-    background: #d9e6ff;
-  }
-
-/* --- Estilos para el botón de hamburguesa (oculto por defecto) --- */
 .menu-toggle {
     display: none; /* Oculto en vista de escritorio */
     background: none;
@@ -184,8 +98,78 @@ header {
 .menu-toggle span:nth-child(2) {
     background: #333; 
 }
-/* ---------------------------------------------------------------------- */
 
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+/* ESTILO DEL ÁREA DE DESPLAZAMIENTO (Clave para la funcionalidad) */
+.terminos-scroll-area {
+    border: 1px solid #e0e0e0; /* Borde gris claro */
+    border-radius: 8px;
+    padding: 20px;
+    max-height: 400px; /* Altura máxima fija para forzar el scroll */
+    overflow-y: auto; /* ¡CLAVE! Muestra la barra de desplazamiento vertical si el contenido excede max-height */
+    margin-bottom: 30px;
+}
+
+/* Contenido dentro del área de scroll */
+.terminos-content section {
+    margin-bottom: 25px;
+}
+
+.terminos-content h2 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.terminos-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 5px; /* Pequeño indentado para los párrafos */
+}
+
+/* Estilo para la barra de desplazamiento (Personalización para navegadores Webkit - Chrome, Safari) */
+.terminos-scroll-area::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra */
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb; /* Color del "pulgar" de la barra */
+    border-radius: 10px;
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb:hover {
+    background-color: #888888;
+}
+
+
+/* Estilo del botón */
+.btn-volver {
+    display: block;
+    width: 50%; /* Más estrecho para centrar mejor */
+    max-width: 300px; 
+    margin: 0 auto; /* Centrar el botón */
+    padding: 12px 25px;
+    background-color: #0a3d91; /* Azul similar al de la imagen */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-volver:hover {
+    background-color: #092c6d; /* Azul más oscuro al pasar el ratón */
+}
 
 @media (max-width: 768px) {
   .header {

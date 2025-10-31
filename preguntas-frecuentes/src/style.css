@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc; /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    margin: 0;
+    color: #1a2e5f;
+}
+
+.contenedor {
+    width: 100%;
+    max-width: 800px; /* Ancho máximo para el contenido */
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* --- Estilos del Acordeón --- */
+
+.acordeon-item {
+    border-top: 1px solid #eee; /* Línea divisoria suave */
+}
+
+.acordeon-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* .acordeon-header:hover {
+    color: #007bff; /* Color al pasar el mouse, similar al azul de la imagen 
+} */
+
+.flecha {
+    color: #0a3d91; /* Color de la flecha */ 
+    transition: transform 0.3s ease;
+    font-size: 14px;
+}
+
+.flecha:hover {
+    color: #608bdb;
+}
+
+
+/* Estilo cuando el item está ACTIVO (desplegado) */
+.acordeon-item.active .flecha {
+    transform: rotate(180deg); /* Gira la flecha para apuntar hacia arriba */
+}
+
+.acordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Animación para el despliegue suave */
+    padding: 0 0;
+    background-color: #fcfcfc; /* Un fondo ligeramente diferente para la respuesta */
+}
+
+.acordeon-content p {
+    padding: 10px 0 15px 0; /* Padding solo a la respuesta para simular el espacio de la imagen */
+    margin: 0;
+    line-height: 1.5;
+    color: #555;
+    font-weight: normal;
+}
