@@ -3,9 +3,6 @@
 import styled from "styled-components";
 import React from "react";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
-// [Importar styled-components y estilos]
-
-// ... (El código de Styled-components: HiddenCheckbox y Slider se mantiene) ...
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   display: none;
@@ -53,7 +50,7 @@ const Slider = styled.span`
 `;
 
 const SwitchPersonalizacion: React.FC = () => {
-  // Solo necesitamos el estado y la función de TOGGLE específica
+  
   const { personalizacion, togglePersonalizacion } = useCookiePreferences();
 
   return (
@@ -61,7 +58,7 @@ const SwitchPersonalizacion: React.FC = () => {
       <HiddenCheckbox
         id="toggle-personalizacion"
         checked={personalizacion}
-        // Usamos la función de TOGGLE específica
+    
         onChange={togglePersonalizacion} 
       />
       <Slider aria-hidden="true" />

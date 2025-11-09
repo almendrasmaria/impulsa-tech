@@ -4,8 +4,6 @@ import SwitchRendimiento from "../src/components/SwitchRendimiento";
 import { Link } from "react-router-dom";
 
 
-
-
 const Cookie: React.FC = () => {
   return (
     <>

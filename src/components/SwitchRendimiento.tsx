@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
 
-// Asume que los estilos HiddenCheckbox y Slider están definidos en este archivo o importados
 
-// [Incluir aquí el código de Styled-components: HiddenCheckbox y Slider]
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   display: none;
@@ -51,7 +49,7 @@ const Slider = styled.span`
 `;
 
 const SwitchRendimiento: React.FC = () => {
-  // Solo necesitamos el estado y la función de TOGGLE específica
+  
   const { rendimiento, toggleRendimiento } = useCookiePreferences();
 
   return (
@@ -59,7 +57,6 @@ const SwitchRendimiento: React.FC = () => {
       <HiddenCheckbox
         id="toggle-rendimiento"
         checked={rendimiento}
-        // Usamos la función de TOGGLE específica
         onChange={toggleRendimiento}
       />
       <Slider aria-hidden="true" />

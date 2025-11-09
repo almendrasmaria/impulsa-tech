@@ -1,1 +1,0 @@
-En el caso de que aparezca el error de Styled Components: npm install styled-components.
