@@ -1,13 +1,12 @@
 
 import React from "react";
-import CookieAlert from "./components/CookieAlert";
-import Cookie from "../pages/Cookie";
+import Cuerpo from "./components/Cuerpo"
+
 
 const App: React.FC = () => {
   return (
     <>
-      <Cookie />
-      <CookieAlert />
+      <Cuerpo />
     </>
   );
 };

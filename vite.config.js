@@ -6,7 +6,8 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']},
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
   css: {
     devSourcemap: true,
   },

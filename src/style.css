@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7faff;
+  padding: 20px;
+}
+
+
+/* La barra del medio es negra, como en la imagen */
+.menu-toggle span:nth-child(2) {
+    background: #333; 
+}
+
+
+
+/* Estilo para la barra de desplazamiento (Personalización para navegadores Webkit - Chrome, Safari) */
+.terminos-scroll-area::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra */
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb; /* Color del "pulgar" de la barra */
+    border-radius: 10px;
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb:hover {
+    background-color: #888888;
+}
+
+
+/* Estilo del botón */
+.btn-volver {
+    transition: background-color 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 25px;
+    /* Alineación para vista móvil: Botón - Logo - Ingresar */
+    justify-content: space-between;
+  }
+
+  .ingresar {
+    display: none;
+  }
+
+
+  /* Ocultar el menú de navegación por defecto */
+  .nav-menu {
+    display: none; 
+    /* Estilos del menú desplegado (para cuando se le añada la clase 'activo') */
+    flex-direction: column;
+    position: absolute; 
+    top: 90px; /* Ajusta la posición debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    padding: 20px 0; /* Padding lateral se maneja en los botones */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra para el menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros contenidos */
+  }
+
+  /* **CORRECCIÓN:** Estilos para que los enlaces se vean bien en vertical */
+  .nav-menu .nav-boton {
+      width: 100%;
+      padding: 15px 25px; /* Relleno para que el área de click sea grande */
+      border-bottom: 1px solid #f0f4ff; /* Separador sutil */
+  }
+
+  /* Mostrar el menú cuando el JavaScript le añada la clase 'activo' */
+  .nav-menu.activo {
+    display: flex; /* Muestra el menú verticalmente */
+  }
+
+  /* Mostrar el botón de hamburguesa */
+  .menu-toggle {
+    display: flex; /* Lo mostramos en móvil */
+    order: -1; /* Lo mueve a la izquierda del logo */
+    margin-right: 15px; /* Espacio entre el botón y el logo */
+  }
+
+  /* Ajustamos el tamaño del logo si es necesario */
+  .logo img {
+      height: 60px; /* Un poco más pequeño que el default de 70px */
+  }
+
+  .contenido {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .col-der {
+    order: -1; 
+  }
+}
+
+
+@media (max-width: 440px) {
+  body {
+    padding: 10px;
+  }
+
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    position: relative;
+  }
+  
+    
+  .nav-menu .nav-boton {
+      padding: 12px 15px;
+  }
+
+  .menu-toggle {
+    display: flex;
+    order: -1; 
+    margin-right: 8px; /* Reducimos el margen con el logo */
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .ingresar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ingresar {
+    display: none;
+  }
+
+  .btn-outline {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 16px;
+  }
+
+  .contenido {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .col-izq,
+  .col-der {
+    width: 100%;
+  }
+
+
+  .col-der {
+    order: -1;
+  }
+
+  .caja-der {
+    padding: 16px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p, li, span {
+    font-size: 0.95rem;
+  }
+
+  .detalles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .detalle {
+    margin-right: 0;
+  }
+
+  .info-extra span {
+    display: block;
+    margin-top: 4px;
+  }
+}
