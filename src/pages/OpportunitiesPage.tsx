@@ -1,4 +1,5 @@
 import { Navbar, SearchBar, OpportunityCard } from "../components";
+import { opportunities } from "../data/opportunities";
 
 const OpportunitiesPage = () => {
   return (
@@ -16,9 +17,18 @@ const OpportunitiesPage = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            <OpportunityCard />
-            <OpportunityCard />
-            <OpportunityCard />
+            {opportunities.map((job) => (
+                <OpportunityCard
+                  key={job.id}
+                  companyLogo={job.companyLogo}
+                  position={job.position}
+                  companyName={job.companyName}
+                  location={job.location}
+                  schedule={job.schedule}
+                  modality={job.modality}
+                  description={job.description}
+                />
+              ))}
           </div>
         </div>
       </main>
@@ -27,4 +37,3 @@ const OpportunitiesPage = () => {
 };
 
 export default OpportunitiesPage;
-
