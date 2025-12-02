@@ -1,70 +1,36 @@
-import { LuSearch, LuMapPin } from "react-icons/lu";
+import { LuSearch, LuMapPin, LuChevronDown, LuBriefcase } from "react-icons/lu";
 
-type Variant = "dark" | "light";
-
-interface Props {
-  variant?: Variant;
-}
-
-const SearchBar = ({ variant = "dark" }: Props) => {
-  const isDark = variant === "dark";
-  
+const SearchBar = () => {
   return (
-    <div
-      className={
-        isDark
-          ? "w-full max-w-4xl mx-auto rounded-xl p-6 bg-white/10 backdrop-blur-md ring-1 ring-white/20 text-white shadow-lg"
-          : "w-full max-w-4xl mx-auto rounded-xl p-6 bg-white ring-1 ring-gray-200 text-gray-800 shadow-lg"
-      }
-    >
-      <form className="flex flex-col gap-4 md:flex-row md:items-center">
-        
-        <div className="relative flex-1">
-          <LuSearch
-            className={
-              isDark
-                ? "absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/70 pointer-events-none"
-                : "absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
-            }
-          />
+    <form className="w-full">
+      <div className="w-full flex items-center bg-white rounded-full shadow-sm ring-1 ring-gray-200 overflow-hidden">
+        <div className="flex flex-1 items-center gap-2 px-4 py-2">
+          <LuBriefcase className="h-5 w-5 text-[#0058A3]" />
           <input
             type="text"
-            placeholder="Puesto, empresa o palabra clave"
-            className={
-              isDark
-                ? "w-full h-12 rounded-lg pl-10 pr-3 bg-white/10 text-white placeholder:text-white/70 ring-1 ring-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                : "w-full h-12 rounded-lg pl-10 pr-3 bg-gray-50 text-gray-900 placeholder:text-gray-500 ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2257FF] focus:bg-white transition-colors"
-            }
+            placeholder="Cargo o categoría"
+            className="w-full bg-transparent border-none focus:outline-none text-sm text-gray-800 placeholder:text-gray-500"
           />
         </div>
-
-        <div className="relative flex-1 md:max-w-xs">
-          <LuMapPin
-            className={
-              isDark
-                ? "absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white/70 pointer-events-none"
-                : "absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500 pointer-events-none"
-            }
-          />
-          <input
-            type="text"
-            placeholder="Ubicación"
-            className={
-              isDark
-                ? "w-full h-12 rounded-lg pl-10 pr-3 bg-white/10 text-white placeholder:text-white/70 ring-1 ring-white/30 focus:outline-none focus:ring-2 focus:ring-white"
-                : "w-full h-12 rounded-lg pl-10 pr-3 bg-gray-50 text-gray-900 placeholder:text-gray-500 ring-1 ring-gray-300 focus:outline-none focus:ring-2 focus:ring-[#2257FF] focus:bg-white transition-colors"
-            }
-          />
+        <div className="h-8 w-px bg-gray-200 self-center" />
+        <div className="flex items-center gap-2 px-4 py-2">
+          <LuMapPin className="h-5 w-5 text-[#0058A3]" />
+          <button
+            type="button"
+            className="flex items-center gap-1 text-sm text-gray-700 hover:text-gray-900"
+          >
+            <span>Capital Federal</span>
+            <LuChevronDown className="h-4 w-4 text-gray-500" />
+          </button>
         </div>
-
         <button
-          type="button"
-          className="h-12 rounded-lg bg-[#2257FF] text-white font-semibold hover:bg-[#1e46d9] transition-colors w-full md:w-auto md:px-8 md:shrink-0"
+          type="submit"
+          className="mr-2 my-[6px] flex items-center justify-center w-10 h-10 rounded-full bg-[#003B80] hover:bg-[#002a5c] text-white shadow-sm transition-colors"
         >
-          Buscar ahora
+          <LuSearch className="h-4 w-4" />
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 
