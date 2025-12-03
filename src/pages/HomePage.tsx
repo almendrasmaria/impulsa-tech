@@ -1,10 +1,10 @@
-import { Hero, About, HowItWorks, Contact, Footer } from "../components";
+import { Navbar, Hero, HowItWorks, Contact, Footer } from "../components";
 
 const HomePage = () => {
   return (
     <div className="w-full overflow-hidden">
+      <Navbar />
       <Hero />
-      <About />
       <HowItWorks />
       <Contact />
       <Footer />

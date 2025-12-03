@@ -1,62 +1,81 @@
 import { motion } from "framer-motion";
 
 const Contact = () => {
-    return (
-        <motion.div 
-            initial={{ opacity: 0, x: 200 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: true }}
-            className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden"
-        >
-            <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
-            Contactá <span className="underline underline-offset-4 decoration-1 font-light">con ImpulsaTech</span>
-            </h1>
-            <p className="text-center text-gray-500 mb-8 max-w-80 mx-auto">
-                ¿Querés colaborar o tenés dudas? Estamos para escucharte.
-            </p>
-            <form className="max-w-2xl mx-auto text-gray-600 pt-8">
-                <div className="flex flex-wrap">
-                    <div className="w-full md:w-1/2 text-left">
-                    <label className="block mb-1 font-medium">Nombre completo</label>
-                    <input
-                        className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                        type="text"
-                        name="Name"
-                        placeholder="Ej: Ana Pérez"
-                        required
-                    />
-                    </div>
+  return (
+    <section className="w-full bg-white py-20 px-6 lg:px-32">
+      <motion.div
+        initial={{ opacity: 0, y: 70 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9 }}
+        className="text-center max-w-3xl mx-auto"
+      >
+        <h1 className="text-3xl sm:text-4xl font-bold mb-2 text-[#0F172A]">
+          Contactá con <span className="text-[#0058A3]">ImpulsaTech</span>
+        </h1>
 
-                    <div className="w-full md:w-1/2 text-left md:pl-4">
-                    <label className="block mb-1 font-medium">Correo electrónico</label>
-                    <input
-                        className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                        type="email"
-                        name="Email"
-                        placeholder="Ej: ana.perez@correo.com"
-                        required
-                    />
-                    </div>
-                </div>
+        <p className="text-gray-600 mb-10 max-w-md mx-auto">
+          ¿Querés colaborar o tenés dudas? ¡Estamos para escucharte!
+        </p>
 
-                <div className="my-6 text-left">
-                    <label className="block mb-1 font-medium">Mensaje</label>
-                    <textarea
-                    className="w-full border border-gray-300 rounded py-3 px-4 mt-1 h-48 resize-none"
-                    name="Message"
-                    placeholder="Escribí tu mensaje..."
-                    required
-                    ></textarea>
-                </div>
+        <form className="max-w-2xl mx-auto text-gray-600">
 
-                <button className="bg-blue-600 text-white py-2 px-12 mb-10 rounded hover:bg-blue-700 transition-colors">
-                    Enviar mensaje
-                </button>
-            </form>
-        </motion.div>
+          <div className="flex flex-wrap gap-6">
+            <div className="w-full md:flex-1 text-left">
+              <label className="block mb-1 font-medium">Nombre completo</label>
+              <input
+                type="text"
+                placeholder="Ej: Ana Pérez"
+                required
+                className="
+                  w-full rounded-xl py-3 px-4 mt-1
+                  border border-gray-300 
+                  focus:ring-2 focus:ring-[#84B3FF] focus:outline-none
+                "
+              />
+            </div>
 
-    )
-}
+            <div className="w-full md:flex-1 text-left">
+              <label className="block mb-1 font-medium">Correo electrónico</label>
+              <input
+                type="email"
+                placeholder="Ej: ana.perez@correo.com"
+                required
+                className="
+                  w-full rounded-xl py-3 px-4 mt-1
+                  border border-gray-300 
+                  focus:ring-2 focus:ring-[#84B3FF] focus:outline-none
+                "
+              />
+            </div>
+          </div>
 
-export default Contact
+          <div className="my-6 text-left">
+            <label className="block mb-1 font-medium">Mensaje</label>
+            <textarea
+              required
+              placeholder="Escribí tu mensaje..."
+              className="
+                w-full h-48 rounded-xl py-3 px-4 mt-1 resize-none
+                border border-gray-300 
+                focus:ring-2 focus:ring-[#84B3FF] focus:outline-none
+              "
+            ></textarea>
+          </div>
+
+          <button
+            className="
+              bg-[#0058A3] text-white py-3 px-12 rounded-full 
+              font-medium shadow-md
+              hover:bg-[#003B80] transition-colors
+            "
+          >
+            Enviar mensaje
+          </button>
+        </form>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Contact;

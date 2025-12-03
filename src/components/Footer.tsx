@@ -6,7 +6,7 @@ const Footer = () => {
                     <img 
                         src="images/logo-light.png" 
                         alt="Impulsa Tech"
-                        className="object-contain w-[150px] h-[70px] md:w-[180px] md:h-[100px]" 
+                        className="h-10 md:h-12 object-contain mb-4" 
                     />
                     <p className="text-gray-400">Es una plataforma dedicada a conectar a personas sin experiencia con su primera oportunidad en el mundo tecnológico.</p>
                 </div>

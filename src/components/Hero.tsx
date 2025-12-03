@@ -1,31 +1,86 @@
-import Navbar from "./Navbar";
-import { motion } from "framer-motion";
 import SearchBar from "./SearchBar";
+import { LuShieldCheck, LuRocket, LuSparkles } from "react-icons/lu";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <div
-      className="min-h-screen mb-4 bg-cover bg-center bg-no-repeat flex items-center w-full overflow-hidden"
-      style={{ backgroundImage: "url('/images/banner.png')" }}
+    <section
+      className="
+        relative flex flex-col justify-center w-full overflow-hidden 
+        min-h-[70vh]
+        bg-gradient-to-r from-[#E8F0FF] to-white
+      "
     >
-      <Navbar variant="dark" />
-
-      <motion.div 
-        initial={{ opacity: 0, y: 100 }}
+      <motion.div
+        initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5 }}
+        transition={{ duration: 0.9 }}
         viewport={{ once: true }}
-        className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white"
+        className="relative z-10 w-full max-w-4xl mx-auto text-center px-6 md:px-10 lg:px-20 text-gray-800"
       >
-        <p className="uppercase font-semibold tracking-wide text-sm md:text-base">
-          ÚNETE A <span className="text-[#84B3FF]">IMPULSATECH</span>
+        <p className="uppercase font-semibold tracking-wide text-xs sm:text-sm md:text-base text-[#003B80]">
+          ÚNETE A <span className="text-[#0058A3]">IMPULSATECH</span>
         </p>
-        <h1 className="text-3xl sm:text-5xl font-bold mt-2 mb-6 leading-tight">
-          Encuentra tu primer <span className="text-[#84B3FF]">oportunidad</span>
+
+        <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold mt-3 leading-tight">
+          Impulsa tu carrera en{" "}
+          <span className="text-[#0058A3]">tecnología</span>
         </h1>
-        <SearchBar />
+
+        <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+          Encontrá empleos junior, programas trainee, internships, academias y
+          bootcamps, todo en un solo portal.
+        </p>
+
+        <div className="mt-8 max-w-3xl mx-auto w-full">
+          <SearchBar />
+        </div>
+
+        <div className="mt-10 flex items-center justify-center gap-10 flex-wrap">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.1, delay: 0.4 }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#E7F0FF] text-[#0058A3]">
+              <LuShieldCheck className="w-8 h-8" />
+            </div>
+            <p className="text-sm font-medium text-gray-700">Seguridad</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.1, delay: 0.8 }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#E7F0FF] text-[#0058A3]">
+              <LuRocket className="w-8 h-8" />
+            </div>
+            <p className="text-sm font-medium text-gray-700">Crecimiento</p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.1, delay: 1.2 }}
+            whileHover={{ scale: 1.05, y: -4 }}
+            className="flex flex-col items-center gap-2"
+          >
+            <div className="w-14 h-14 rounded-full flex items-center justify-center bg-[#E7F0FF] text-[#0058A3]">
+              <LuSparkles className="w-8 h-8" />
+            </div>
+            <p className="text-sm font-medium text-gray-700">Oportunidades</p>
+          </motion.div>
+        </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
