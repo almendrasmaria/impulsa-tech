@@ -23,11 +23,15 @@ const SearchBar = ({
     const fetchLocations = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://apis.datos.gob.ar/georef/api/v2.0/provincias');
+        const response = await fetch(
+          "https://apis.datos.gob.ar/georef/api/v2.0/provincias"
+        );
         const data = await response.json();
-        setLocations(data.provincias.map((provincia: { nombre: string }) => provincia.nombre));
+        setLocations(
+          data.provincias.map((provincia: { nombre: string }) => provincia.nombre)
+        );
       } catch (error) {
-        console.error('Error fetching locations:', error);
+        console.error("Error fetching locations:", error);
       } finally {
         setLoading(false);
       }
@@ -64,8 +68,9 @@ const SearchBar = ({
 
         <div className="flex items-center gap-2 px-4 py-2">
           <LuMapPin className="h-5 w-5 text-[#0058A3]" />
+
           {loading ? (
-            <p>Cargando ubicaciones...</p>
+            <div className="animate-spin h-4 w-4 border-2 border-gray-300 border-t-[#0058A3] rounded-full"></div>
           ) : (
             <select
               value={selectedLocation || ""}
