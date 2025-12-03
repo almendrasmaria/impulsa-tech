@@ -75,9 +75,13 @@ const SearchBar = ({
             <select
               value={selectedLocation || ""}
               onChange={(e) => handleLocationChange(e.target.value || null)}
-              className="bg-transparent border-none text-sm text-gray-700 focus:outline-none"
+              className="
+                bg-transparent border-none text-sm text-gray-700 focus:outline-none 
+                max-w-[110px]  
+                truncate
+              "
             >
-              <option value="">Seleccionar ubicación</option>
+              <option value="">Ubicación</option>
               {locations.map((location) => (
                 <option key={location} value={location}>
                   {location}
