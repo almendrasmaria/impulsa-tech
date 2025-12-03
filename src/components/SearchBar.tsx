@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { LuSearch, LuMapPin, LuBriefcase } from "react-icons/lu";
 
 interface SearchBarProps {
@@ -15,6 +16,26 @@ const SearchBar = ({
   selectedLocation,
   onLocationChange,
 }: SearchBarProps) => {
+  const [locations, setLocations] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchLocations = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('https://apis.datos.gob.ar/georef/api/v2.0/provincias');
+        const data = await response.json();
+        setLocations(data.provincias.map((provincia: { nombre: string }) => provincia.nombre));
+      } catch (error) {
+        console.error('Error fetching locations:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLocations();
+  }, []);
+
   const handleLocationChange = (location: string | null) => {
     onLocationChange(location);
   };
@@ -23,7 +44,7 @@ const SearchBar = ({
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        onSearchSubmit(); 
+        onSearchSubmit();
       }}
       className="w-full"
     >
@@ -43,37 +64,22 @@ const SearchBar = ({
 
         <div className="flex items-center gap-2 px-4 py-2">
           <LuMapPin className="h-5 w-5 text-[#0058A3]" />
-          <select
-            value={selectedLocation || ""}
-            onChange={(e) => handleLocationChange(e.target.value || null)}
-            className="bg-transparent border-none text-sm text-gray-700 focus:outline-none"
-          >
-            <option value="">Seleccionar ubicación</option>
-            <option value="Capital Federal">Capital Federal</option>
-            <option value="Buenos Aires-GBA">Buenos Aires-GBA</option>
-            <option value="Catamarca">Catamarca</option>
-            <option value="Chaco">Chaco</option>
-            <option value="Chubut">Chubut</option>
-            <option value="Córdoba">Córdoba</option>
-            <option value="Corrientes">Corrientes</option>
-            <option value="Entre Ríos">Entre Ríos</option>
-            <option value="Formosa">Formosa</option>
-            <option value="Jujuy">Jujuy</option>
-            <option value="La Pampa">La Pampa</option>
-            <option value="La Rioja">La Rioja</option>
-            <option value="Mendoza">Mendoza</option>
-            <option value="Misiones">Misiones</option>
-            <option value="Neuquén">Neuquén</option>
-            <option value="Río Negro">Río Negro</option>
-            <option value="Salta">Salta</option>
-            <option value="San Juan">San Juan</option>
-            <option value="San Luis">San Luis</option>
-            <option value="Santa Cruz">Santa Cruz</option>
-            <option value="Santa Fe">Santa Fe</option>
-            <option value="Santiago del Estero">Santiago del Estero</option>
-            <option value="Tierra del Fuego">Tierra del Fuego</option>
-            <option value="Tucumán">Tucumán</option>
-          </select>
+          {loading ? (
+            <p>Cargando ubicaciones...</p>
+          ) : (
+            <select
+              value={selectedLocation || ""}
+              onChange={(e) => handleLocationChange(e.target.value || null)}
+              className="bg-transparent border-none text-sm text-gray-700 focus:outline-none"
+            >
+              <option value="">Seleccionar ubicación</option>
+              {locations.map((location) => (
+                <option key={location} value={location}>
+                  {location}
+                </option>
+              ))}
+            </select>
+          )}
         </div>
 
         <button
@@ -88,4 +94,3 @@ const SearchBar = ({
 };
 
 export default SearchBar;
-

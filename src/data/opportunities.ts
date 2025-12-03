@@ -26,7 +26,7 @@ export const opportunities: Opportunity[] = [
     companyLogo: "images/logo-corteva.png",
     position: "Desarrollador/a Backend Jr",
     companyName: "Corteva Agriscience",
-    location: "Buenos Aires-GBA",
+    location: "Buenos Aires",
     schedule: "Part-Time",
     modality: "Remoto",
     description:

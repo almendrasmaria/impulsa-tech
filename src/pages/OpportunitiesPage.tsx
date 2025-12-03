@@ -2,6 +2,24 @@ import { useEffect, useState } from "react";
 import { Navbar, SearchBar, OpportunityCard } from "../components";
 import { opportunities } from "../data/opportunities";
 
+const normalize = (str: string) =>
+  str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+const getLocationAliases = (location: string | null): string[] | null => {
+  if (!location) return null;
+
+  const n = normalize(location);
+
+  if (n === normalize("Ciudad Autónoma de Buenos Aires")) {
+    return [
+      normalize("Ciudad Autónoma de Buenos Aires"),
+      normalize("Capital Federal"),
+      normalize("CABA"),
+    ];
+  }
+  return [n];
+};
+
 const OpportunitiesPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
@@ -9,17 +27,23 @@ const OpportunitiesPage = () => {
     useState(opportunities);
 
   const handleSearchSubmit = () => {
-    const filtered = opportunities.filter((job) => {
-      const matchesPosition = job.position
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+    const normalizedSearch = normalize(searchTerm);
+    const locationAliases = getLocationAliases(selectedLocation);
 
-      const matchesLocation = selectedLocation
-        ? job.location === selectedLocation
+    const filtered = opportunities.filter((job) => {
+      const matchesPosition = normalize(job.position).includes(
+        normalizedSearch
+      );
+
+      const matchesLocation = locationAliases
+        ? locationAliases.some(
+            (alias) => normalize(job.location) === alias
+          )
         : true;
 
       return matchesPosition && matchesLocation;
     });
+
     setFilteredOpportunities(filtered);
   };
 
