@@ -3,7 +3,9 @@ import CompanyProfile from '../components/CompanyProfile';
 
 const CompanyProfilePage: React.FC = () => {
     return (
-        <CompanyProfile />
+        <div className="min-h-screen bg-gradient-to-r from-[#E8F0FF] to-white">
+            <CompanyProfile />
+        </div>
     );
 };
 

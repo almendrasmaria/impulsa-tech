@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
         const baseStyles = {
             fontFamily: 'Poppins, sans-serif',
             fontWeight: 500,
-            borderRadius: '10px',
+            borderRadius: '9999px',
             transition: 'all 0.2s ease-in-out',
             cursor: 'pointer',
             border: 'none',
@@ -35,20 +35,20 @@ const Button: React.FC<ButtonProps> = ({
             'primary': {
                 ...baseStyles,
                 color: '#FFFFFF',
-                backgroundColor: '#1829DB',
+                backgroundColor: '#0058A3',
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             },
             'secondary': {
                 ...baseStyles,
-                color: '#1829DB',
+                color: '#0058A3',
                 backgroundColor: '#FFFFFF',
-                border: '2px solid #1829DB',
+                border: '2px solid #0058A3',
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
             },
             'full-width-primary': {
                 ...baseStyles,
                 color: '#FFFFFF',
-                backgroundColor: '#1829DB',
+                backgroundColor: '#0058A3',
                 width: '100%',
                 minWidth: 'auto',
                 height: '48px',
@@ -57,9 +57,9 @@ const Button: React.FC<ButtonProps> = ({
             },
             'full-width-secondary': {
                 ...baseStyles,
-                color: '#1829DB',
+                color: '#0058A3',
                 backgroundColor: '#FFFFFF',
-                border: '2px solid #1829DB',
+                border: '2px solid #0058A3',
                 width: '100%',
                 minWidth: 'auto',
                 height: '48px',
@@ -76,11 +76,11 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
         const button = e.currentTarget
         if (variant === 'secondary' || variant === 'full-width-secondary') {
-            button.style.backgroundColor = '#1829DB'
+            button.style.backgroundColor = '#0058A3'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.15)'
         } else {
-            button.style.backgroundColor = '#1423C4'
+            button.style.backgroundColor = '#003B80'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.15)'
         }
@@ -90,10 +90,10 @@ const Button: React.FC<ButtonProps> = ({
         const button = e.currentTarget
         if (variant === 'secondary' || variant === 'full-width-secondary') {
             button.style.backgroundColor = '#FFFFFF'
-            button.style.color = '#1829DB'
+            button.style.color = '#0058A3'
             button.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)'
         } else {
-            button.style.backgroundColor = '#1829DB'
+            button.style.backgroundColor = '#0058A3'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
         }

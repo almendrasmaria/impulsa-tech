@@ -42,7 +42,7 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ initialData }) => {
     };
 
     return (
-        <div className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden bg-gray-100 min-h-screen flex items-center justify-center">
+        <div className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden min-h-screen flex items-center justify-center">
             <Card className="w-full max-w-2xl mx-auto" header="Mi perfil" headerClassName="text-left">
                 <form className="max-w-2xl mx-auto text-gray-600 pt-8">
                     <div className="flex flex-wrap">
@@ -115,11 +115,11 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ initialData }) => {
                     </div>
                     <div className="flex justify-end mb-4">
                         {editMode ? (
-                            <Button type="button" onClick={handleSave} className="bg-blue-600 text-white py-2 px-12 mb-10 rounded hover:bg-blue-700 transition-colors">
+                            <Button type="button" onClick={handleSave} className="bg-[#0058A3] text-white py-2 px-12 mb-10 rounded-full hover:bg-[#003B80] transition-colors">
                                 Guardar cambios
                             </Button>
                         ) : (
-                            <Button type="button" onClick={handleEdit} className="bg-blue-600 text-white py-2 px-12 mb-10 rounded hover:bg-blue-700 transition-colors">
+                            <Button type="button" onClick={handleEdit} className="bg-[#0058A3] text-white py-2 px-12 mb-10 rounded-full hover:bg-[#003B80] transition-colors">
                                 Editar
                             </Button>
                         )}

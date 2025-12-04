@@ -47,7 +47,7 @@ const JobOfferForm: React.FC = () => {
         };
 
         return (
-            <div className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden bg-gray-100 min-h-screen flex items-center justify-center">
+            <div className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden min-h-screen flex items-center justify-center">
                 <Card className="w-full max-w-2xl rounded-2xl shadow-sm p-6 gap-4" header="Crear oferta" headerClassName="text-left">
                     <form className="max-w-2xl mx-auto text-gray-600 pt-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
@@ -110,7 +110,7 @@ const JobOfferForm: React.FC = () => {
                                     />
                                 </div>
                                 <div className="flex justify-end mb-4">
-                                    <Button type="button" onClick={handlePublish} className="bg-blue-600 text-white py-2 px-12 mb-10 rounded hover:bg-blue-700 transition-colors">
+                                    <Button type="button" onClick={handlePublish} className="bg-[#0058A3] text-white py-2 px-12 mb-10 rounded-full hover:bg-[#003B80] transition-colors">
                                         Publicar
                                     </Button>
                                 </div>

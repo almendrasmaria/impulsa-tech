@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ children, className, header, ...props }) =>
         {...props}
     >
         {header && (
-            <div className={classNames("mb-4 border-b pb-2 font-semibold text-lg text-gray-800", props.headerClassName)}>
+            <div className={classNames("mb-4 border-b pb-2 font-semibold text-lg text-[#003B80]", props.headerClassName)}>
                 {header}
             </div>
         )}

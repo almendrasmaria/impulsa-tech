@@ -125,8 +125,8 @@ const EditJobOfferForm: React.FC<EditJobOfferFormProps> = ({ offer, onSave, onDe
                 {estados.map(e => <option key={e} value={e}>{e}</option>)}
             </Select>
             <div className="flex justify-end gap-2 mt-6">
-                <Button type="button" onClick={handleDelete} className="bg-red-100 text-red-700">Eliminar</Button>
-                <Button type="submit" className="bg-blue-600 text-white">Guardar</Button>
+                <Button type="button" onClick={handleDelete} className="bg-red-100 text-red-700 hover:bg-red-200">Eliminar</Button>
+                <Button type="submit" className="bg-[#0058A3] text-white hover:bg-[#003B80]">Guardar</Button>
             </div>
         </form>
     );

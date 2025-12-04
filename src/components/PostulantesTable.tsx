@@ -72,14 +72,14 @@ const PostulantesTable: React.FC = () => {
                             </TableCell>
                             <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                 <span className="block md:hidden text-xs text-gray-500 mb-1">Curriculum</span>
-                                <a href={postulante.curriculum} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline text-sm">Ver curriculum</a>
+                                <a href={postulante.curriculum} target="_blank" rel="noopener noreferrer" className="text-[#0058A3] underline text-sm hover:text-[#003B80]">Ver curriculum</a>
                             </TableCell>
                             <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                 <span className="block md:hidden text-xs text-gray-500 mb-1">Estado</span>
                                 <Select
                                     value={postulante.estado}
                                     onChange={e => handleEstadoChange(postulante.id, e.target.value)}
-                                    className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
+                                    className="border border-gray-300 rounded px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#0058A3] w-full"
                                     name="estado"
                                 >
                                     {estados.map(e => (
