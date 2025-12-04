@@ -9,7 +9,7 @@ interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
 const Select: React.FC<SelectProps> = ({ className, children, value, ...props }) => (
     <select
         className={classNames(
-            'border border-gray-300 rounded-full px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#0058A3]',
+            'border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-[#0058A3]',
             !value ? 'text-gray-400' : 'text-gray-700',
             className
         )}
