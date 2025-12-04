@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Navbar, SearchBar, OpportunityCard } from "../components";
 import { opportunities } from "../data/opportunities";
 
@@ -21,14 +22,17 @@ const getLocationAliases = (location: string | null): string[] | null => {
 };
 
 const OpportunitiesPage = () => {
+  const { search } = useLocation();
+  const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
   const [filteredOpportunities, setFilteredOpportunities] =
     useState(opportunities);
 
-  const handleSearchSubmit = () => {
-    const normalizedSearch = normalize(searchTerm);
-    const locationAliases = getLocationAliases(selectedLocation);
+  const applyFilters = (term: string, location: string | null) => {
+    const normalizedSearch = normalize(term);
+    const locationAliases = getLocationAliases(location);
 
     const filtered = opportunities.filter((job) => {
       const matchesPosition = normalize(job.position).includes(
@@ -48,13 +52,27 @@ const OpportunitiesPage = () => {
   };
 
   useEffect(() => {
-    handleSearchSubmit();
-  }, [selectedLocation]);
+    const params = new URLSearchParams(search);
+    const q = params.get("q") || "";
+    const loc = params.get("loc");
+
+    setSearchTerm(q);
+    setSelectedLocation(loc || null);
+    applyFilters(q, loc || null);
+  }, [search]);
+
+  const handleSearchSubmit = () => {
+    const params = new URLSearchParams();
+
+    if (searchTerm.trim()) params.set("q", searchTerm.trim());
+    if (selectedLocation) params.set("loc", selectedLocation);
+
+    navigate(`/oportunidades?${params.toString()}`);
+  };
 
   return (
-    <div className="w-full overflow-hidden">
-      <Navbar variant="light" />
-
+    <div className="w-full overflow-hidden min-h-screen bg-[#FAFDFF]">
+      <Navbar />
       <main className="max-w-7xl mx-auto px-4 py-6">
         <h1 className="text-2xl font-semibold text-[#1A1A1A] mb-6">
           Oportunidades

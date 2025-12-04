@@ -1,8 +1,23 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import { LuShieldCheck, LuRocket, LuSparkles } from "react-icons/lu";
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
+  const navigate = useNavigate();
+
+  const handleSearchSubmit = () => {
+    const params = new URLSearchParams();
+
+    if (searchTerm.trim()) params.set("q", searchTerm.trim());
+    if (selectedLocation) params.set("loc", selectedLocation);
+
+    navigate(`/oportunidades?${params.toString()}`);
+  };
+
   return (
     <section
       className="
@@ -33,7 +48,13 @@ const Hero = () => {
         </p>
 
         <div className="mt-8 max-w-3xl mx-auto w-full">
-          <SearchBar />
+          <SearchBar
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            onSearchSubmit={handleSearchSubmit}
+            selectedLocation={selectedLocation}
+            onLocationChange={setSelectedLocation}
+          />
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-10 flex-wrap">
@@ -85,4 +106,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
