@@ -1,13 +1,11 @@
+import { BrowserRouter } from "react-router-dom";
+import Rutas from "./routes/Rutas";
 
-import React from "react";
-import Terminoscondiciones from "../pages/Terminoscondiciones"
-
-
-const App: React.FC = () => {
+const App = () => {
   return (
-    <>
-      <Terminoscondiciones />
-    </>
+    <BrowserRouter>
+      <Rutas />
+    </BrowserRouter>
   );
 };
 
