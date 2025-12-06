@@ -1,5 +1,5 @@
 import { useRoutes } from "react-router-dom";
-import Cookie from "../pages/Cookie";
+import Cookie from "../../pages/Cookie"
 
 const Rutas = () => {
   const routes = useRoutes([

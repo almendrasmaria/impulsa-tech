@@ -1,13 +1,12 @@
 import React from "react";
 import SwitchPersonalizacion from "../src/components/SwitchPersonalizacion";
 import SwitchRendimiento from "../src/components/SwitchRendimiento";
-import { Link } from "react-router-dom";
 
 
 const Cookie: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-50 font-Poppins grid justify-center align-center ">
+      <div className="bg-gray-50 font-Poppins grid justify-center align-center">
         <h1 className="font-semibold grid justify-center mt-3 text-2xl">
           Políticas de Cookies
         </h1>
@@ -20,12 +19,11 @@ const Cookie: React.FC = () => {
             visitar un sitio web. A través de ellas, podemos recordar tus
             preferencias, analizar el uso del sitio y mostrarte información
             personalizada. También puedes leer nuestros{" "}
-            <Link
-              to="#" //Agregar para redirigir a Términos y Condiciones
+            <a href="#" //Agregar para redirigir a Términos y Condiciones
               className="text-blue-700"
             >
               Términos y Condiciones
-            </Link>
+            </a>
             .
           </p>
         </div>

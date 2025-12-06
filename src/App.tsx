@@ -1,14 +1,12 @@
 
-import React from "react";
-import CookieAlert from "./components/CookieAlert";
-import Cookie from "../pages/Cookie";
+import { BrowserRouter } from "react-router-dom";
+import Rutas from "./routes/Rutas";
 
-const App: React.FC = () => {
+const App = () => {
   return (
-    <>
-      <Cookie />
-      <CookieAlert />
-    </>
+    <BrowserRouter>
+      <Rutas />
+    </BrowserRouter>
   );
 };
 

@@ -1,6 +1,5 @@
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
 
 const COOKIE_ALERT_KEY = "cookieAlertShown";
@@ -61,12 +60,12 @@ const CookieAlert: React.FC = () => {
         >
           Rechazar
         </button>
-        <Link
-          to="/cookie"
+        <a
+          href="/cookie"
           className="flex justify-center items-center text-white bg-gray-500 button rounded-[10px] cursor-pointer p-2"
         >
           Personalizar
-        </Link>
+        </a>
       </div>
     </div>
   );
