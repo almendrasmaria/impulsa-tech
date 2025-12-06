@@ -20,7 +20,7 @@ const Cookie: React.FC = () => {
             preferencias, analizar el uso del sitio y mostrarte información
             personalizada. También puedes leer nuestros{" "}
             <a
-              href="#" //-------Agregar para redirigir a Términos y Condiciones------------
+              href="/terminos"
               className="text-blue-700"
             >
               Términos y Condiciones
@@ -67,7 +67,7 @@ const Cookie: React.FC = () => {
               </p>
             </div>
 
-            <div className="w-[60vw] rounded-[10px] p-2 border border-2 border-gray-200 bg-white">
+            <div className="w-[60vw] rounded-[10px] p-2 border-2 border-gray-200 bg-white">
               <div className="flex justify-between items-center font-bold m-2">
                 <p>Cookies de Rendimiento</p>
                 <SwitchRendimiento />
@@ -85,7 +85,7 @@ const Cookie: React.FC = () => {
             <button
               className="text-lg px-6 py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors mb-10"
               onClick={() => {
-                /* ---------Volver a Inicio Iria Aqui--------- */
+                /* ---------Volver a Inicio (HomePage.tsx) Iria Aqui--------- */
               }}
             >
               Volver al Inicio
