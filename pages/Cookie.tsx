@@ -20,7 +20,7 @@ const Cookie: React.FC = () => {
             preferencias, analizar el uso del sitio y mostrarte información
             personalizada. También puedes leer nuestros{" "}
             <a
-              href="#" //Agregar para redirigir a Términos y Condiciones
+              href="#" //-------Agregar para redirigir a Términos y Condiciones------------
               className="text-blue-700"
             >
               Términos y Condiciones
@@ -85,7 +85,7 @@ const Cookie: React.FC = () => {
             <button
               className="text-lg px-6 py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors mb-10"
               onClick={() => {
-                /* Volver a Inicio Iria Aqui */
+                /* ---------Volver a Inicio Iria Aqui--------- */
               }}
             >
               Volver al Inicio
