@@ -3,7 +3,7 @@ const Terminoscondiciones = () => {
   return (
     <div className="bg-gradient-to-r from-[#f7faff] to-[#f7faff] py-10 flex justify-center">
       <div className="bg-white p-10 rounded-2xl max-w-7xl text-blue-950">
-        <h1 className="text-center text-2xl mb-8 font-bold">
+        <h1 className="text-center text-2xl mb-8 font-semibold">
           Términos y Condiciones de Uso
         </h1>
 
@@ -103,7 +103,7 @@ const Terminoscondiciones = () => {
           <button
             className="text-lg px-6 py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors"
             onClick={() => {
-              /* Volver a Inicio Iria Aqui */
+              /* -------Volver a Inicio Iria Aqui---------- */
             }}
           >
             Volver al Inicio
