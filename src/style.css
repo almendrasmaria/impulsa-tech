@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7faff;
+  padding: 0; 
+}
+
+
+.terminos-scroll-area::-webkit-scrollbar {
+    width: 8px; 
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb {
+    background-color: #bbbbbb; 
+    border-radius: 10px;
+}
+
+.terminos-scroll-area::-webkit-scrollbar-thumb:hover {
+    background-color: #888888;
+}
+
+/* --- Estilos Menú Hamburguesa (Mobile) --- */
+
+.menu-toggle span:nth-child(2) {
+    background: #333; 
+}
+
+
+@media (max-width: 767px) {
+  /* Ocultar el menú de navegación por defecto */
+  header nav {
+    /* La clase 'hidden' de Tailwind se usa para ocultar en mobile por defecto,
+       pero necesitamos anularla para el menú desplegado */
+    display: none; 
+    
+    flex-direction: column;
+    position: absolute; 
+    top: 68px; 
+    left: 0;
+    width: 100%;
+    background-color: white; 
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+    z-index: 1000; 
+  }
+
+
+  header nav.active-menu {
+    display: flex; 
+  }
+  
+  header nav a {
+      width: 100%;
+      padding: 15px 25px; 
+      border-bottom: 1px solid #f0f4ff; 
+      text-align: left;
+      font-size: 16px;
+      font-weight: 500;
+  } 
+}
