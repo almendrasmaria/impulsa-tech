@@ -1,12 +1,12 @@
 
 import React from "react";
-import Cuerpo from "./components/Cuerpo"
+import Terminoscondiciones from "../pages/Terminoscondiciones"
 
 
 const App: React.FC = () => {
   return (
     <>
-      <Cuerpo />
+      <Terminoscondiciones />
     </>
   );
 };
