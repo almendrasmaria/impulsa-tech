@@ -5,6 +5,7 @@ import Terminoscondiciones from "../../pages/Terminoscondiciones";
 const Rutas = () => {
   const routes = useRoutes([
     { path: "/Terminos", element: <Terminoscondiciones /> },
+    
     {
       path: "*",
       element: (
