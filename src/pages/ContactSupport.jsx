@@ -41,8 +41,8 @@ export default function ContactSupport() {
 
   return (
     <main className="py-[clamp(1.5rem,4vw,3rem)] page-support">
-      <section className="container auth">
-        <div className="card">
+      <section className="w-[min(1200px,92%)] mx-auto">
+        <div className="bg-white border border-[#D9D9D9] rounded-[20px] shadow-[0_6px_24px_rgba(16,24,40,0.06)] p-[clamp(16px,2.5vw,28px)]">
           <div className="grid grid-cols-[1.05fr_0.95fr] gap-[clamp(16px,3vw,32px)] items-center">
             <div className="form-col">
               <h1 className="text-[clamp(26px,3.2vw,35px)] font-bold tracking-[0.7px] my-7 mx-0">
@@ -54,10 +54,11 @@ export default function ContactSupport() {
                 onSubmit={handleSubmit}
                 noValidate
               >
-                <div className="field">
+                <div className="grid gap-[18px]">
                   <label htmlFor="name">Nombre</label>
                   <input
                     id="name"
+                    className="w-full h-12 border border-[#D9D9D9] rounded-lg px-3.5 outline-none bg-white placeholder:text-[#9BA0A6] focus:border-[#B9C0FF] focus:shadow-[0_0_0_3px_rgba(24,41,219,0.12)]"
                     type="text"
                     placeholder="Tu nombre"
                     value={form.name}
@@ -69,9 +70,10 @@ export default function ContactSupport() {
                   )}
                 </div>
 
-                <div className="field">
+                <div className="grid gap-[18px]">
                   <label htmlFor="email">Correo electrónico</label>
                   <input
+                    className="w-full h-12 border border-[#D9D9D9] rounded-lg px-3.5 outline-none bg-white placeholder:text-[#9BA0A6] focus:border-[#B9C0FF] focus:shadow-[0_0_0_3px_rgba(24,41,219,0.12)]"
                     id="email"
                     type="email"
                     placeholder="tu@correo.com"
@@ -84,9 +86,10 @@ export default function ContactSupport() {
                   )}
                 </div>
 
-                <div className="field">
+                <div className="grid gap-[18px]">
                   <label htmlFor="subject">Asunto</label>
                   <input
+                    className="w-full h-12 border border-[#D9D9D9] rounded-lg px-3.5 outline-none bg-white placeholder:text-[#9BA0A6] focus:border-[#B9C0FF] focus:shadow-[0_0_0_3px_rgba(24,41,219,0.12)]"
                     id="subject"
                     type="text"
                     placeholder="¿Sobre qué es tu consulta?"
@@ -99,9 +102,10 @@ export default function ContactSupport() {
                   )}
                 </div>
 
-                <div className="field">
+                <div className="grid gap-[18px]">
                   <label htmlFor="message">Mensaje</label>
                   <textarea
+                    className="w-full min-h-[90px] border border-[#D9D9D9] rounded-lg py-2.5 px-3.5 bg-white resize-y outline-none placeholder:text-[#9BA0A6] focus:border-[#B9C0FF] focus:shadow-[0_0_0_3px_rgba(24,41,219,0.12)]"
                     id="message"
                     placeholder="Escribí tu mensaje..."
                     value={form.message}
@@ -122,21 +126,24 @@ export default function ContactSupport() {
                   <span>Adjuntar archivo</span>
                 </label>
 
-                <button className="btn-primary" type="submit">
+                <button
+                  className="h-[50px] w-full border border-[#1829DB] rounded-lg bg-[#1829DB] text-white font-medium tracking-[0.32px] cursor-pointer inline-flex items-center justify-center hover:brightness-[1.02] active:translate-y-px"
+                  type="submit"
+                >
                   Enviar mensaje
                 </button>
               </form>
             </div>
 
             <div className="art-col">
-              <p className="helper">
+              <p className="text-[rgba(0,0,0,0.72)] text-base tracking-[0.32px] my-2 mb-4">
                 ¿Necesitás ayuda? Contactanos por cualquier inconveniente que
                 tengas.
               </p>
 
               <img src={supportHero} alt="support hero" loading="lazy" />
 
-              <p className="helper">
+              <p className="text-[rgba(0,0,0,0.72)] text-base tracking-[0.32px] my-2 mb-4">
                 <a
                   className="link-primary"
                   href="mailto:soporte@impulsatech.com"

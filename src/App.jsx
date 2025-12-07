@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -19,7 +17,7 @@ import SignupCompany from "./pages/SignupCompany";
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
+   
 
       <Routes>
         <Route path="/login" element={<Login />} />
@@ -34,7 +32,7 @@ export default function App() {
         <Route path="/SignupCompany" element={<SignupCompany />} />
       </Routes>
 
-      <Footer />
+     
     </BrowserRouter>
   );
 }
