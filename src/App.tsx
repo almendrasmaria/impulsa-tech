@@ -8,9 +8,7 @@ import Footer from "./components/Footer";
 const App: React.FC = () => {
   return (
     <>
-      <Header />
       <Cuerpo />
-      <Footer />
     </>
   );
 };
