@@ -1,3 +1,5 @@
 ## Anotación
 
-He trabajado en replicar la estética del sitio dentro de la sección principal de Términos y Condiciones (excluyendo el navbar), asegurando consistencia visual con el resto de la interfaz. Todavía resta implementar la funcionalidad del botón de “Volver al Inicio” en Cuerpo.tsx. Por esa razón, esta comentado.
+El archivo Cuerpo.tsx funciona como el motor de la página, encargándose de organizar toda la información de la oferta y de activar el mensaje de confirmación que aparece cuando decides postularte o copiar el enlace; mientras tanto, el archivo style.css se ocupa de la parte visual, dándole colores profesionales al sitio y creando las animaciones suaves que hacen que los menús y las notificaciones aparezcan con elegancia en la pantalla.
+
+Use Lucide React, que es una biblioteca que se utiliza para añadir elementos visuales, como flechas o botones de redes sociales, a aplicaciones creadas con React. En el código, se encarga de mostrar los iconos de WhatsApp, LinkedIn y el sobre de correo.
