@@ -24,18 +24,24 @@ export default function ForgotPassword() {
   };
 
   return (
-    <main className="site-main page-forgot">
+    <main className="py-[clamp(1.5rem,4vw,3rem)] page-forgot">
       <section className="container auth">
         <div className="card">
-          <div className="card-grid">
+          <div className="grid grid-cols-[1.05fr_0.95fr] gap-[clamp(16px,3vw,32px)] items-center">
             <div className="form-col">
-              <h1 className="title">Recuperar contraseña</h1>
+              <h1 className="text-[clamp(26px,3.2vw,35px)] font-bold tracking-[0.7px] my-7 mx-0">
+                Recuperar contraseña
+              </h1>
               <p className="signup">
                 Ingresá tu correo y te enviaremos un enlace para que puedas
                 restablecer tu contraseña.
               </p>
 
-              <form className="form" onSubmit={handleSubmit} noValidate>
+              <form
+                className="grid gap-[18px]"
+                onSubmit={handleSubmit}
+                noValidate
+              >
                 <div className="field">
                   <label htmlFor="email">Correo electrónico</label>
                   <input

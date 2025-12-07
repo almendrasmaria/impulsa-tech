@@ -77,9 +77,9 @@ body{
 
 .divider{ height: 0; }
 
-.site-main{
+/*.site-main{
   padding-block: clamp(24px, 4vw, 48px);
-}
+}*/
 
 .auth .card{
   background: var(--surface);
@@ -88,7 +88,7 @@ body{
   box-shadow: var(--shadow);
   padding: clamp(16px, 2.5vw, 28px);
 }
-
+/*
 .card-grid{
   display: grid;
   grid-template-columns: 1.05fr .95fr;
@@ -106,7 +106,7 @@ body{
 .form{
   display: grid;
   gap: 18px;
-}
+}*/
 
 .field{
   display: grid;

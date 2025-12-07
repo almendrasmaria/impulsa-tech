@@ -34,14 +34,20 @@ export default function LoginCompany() {
   };
 
   return (
-    <main className="site-main page-login">
+    <main className="py-[clamp(1.5rem,4vw,3rem)] page-login">
       <section className="container auth">
         <div className="card">
-          <div className="card-grid">
+          <div className="grid grid-cols-[1.05fr_0.95fr] gap-[clamp(16px,3vw,32px)] items-center">
             <div className="form-col">
-              <h1 className="title">Iniciar sesión como Empresa</h1>
+              <h1 className="text-[clamp(26px,3.2vw,35px)] font-bold tracking-[0.7px] my-7 mx-0">
+                Iniciar sesión como Empresa
+              </h1>
 
-              <form className="form" onSubmit={handleSubmit} noValidate>
+              <form
+                className="grid gap-[18px]"
+                onSubmit={handleSubmit}
+                noValidate
+              >
                 <div className="field">
                   <label htmlFor="email">Correo electrónico Empresarial</label>
                   <input
