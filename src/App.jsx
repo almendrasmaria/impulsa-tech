@@ -12,6 +12,9 @@ import ContactSupport from "./pages/ContactSupport";
 import SupportSent from "./pages/SupportSent";
 
 import "./styles.css";
+import LoginUsorCom from "./pages/LoginUsorCom";
+import LoginCompany from "./pages/LoginCompany";
+import SignupCompany from "./pages/SignupCompany";
 
 export default function App() {
   return (
@@ -19,13 +22,16 @@ export default function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/recovery-sent" element={<RecoverySent />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/contact-support" element={<ContactSupport />} />
         <Route path="/support-sent" element={<SupportSent />} />
+        <Route path="/LoginUsorCom" element={<LoginUsorCom />} />
+        <Route path="/LoginCompany" element={<LoginCompany />} />
+        <Route path="/SignupCompany" element={<SignupCompany />} />
       </Routes>
 
       <Footer />
