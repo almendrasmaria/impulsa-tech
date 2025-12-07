@@ -2,7 +2,7 @@
 const Terminoscondiciones = () => {
   return (
     <div className="bg-gradient-to-r from-[#f7faff] to-[#f7faff] py-10 flex justify-center">
-      <div className="bg-white p-10 rounded-2xl max-w-7xl text-blue-950">
+      <div className="bg-white p-10 rounded-2xl max-w-7xl">
         <h1 className="text-center text-2xl mb-8 font-semibold">
           Términos y Condiciones de Uso
         </h1>
