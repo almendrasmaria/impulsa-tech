@@ -152,8 +152,8 @@ export default function LoginCompany() {
 
                 <p className="signup">
                   ¿No tenés cuenta?{" "}
-                  <Link className="link-primary" to="/SingupCompany">
-                    Crear cuenta como Empresa
+                  <Link className="link-primary" to="/signupCompany">
+                    Crear cuenta (Empresa)
                   </Link>
                 </p>
               </form>

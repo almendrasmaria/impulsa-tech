@@ -139,7 +139,7 @@ export default function Signup() {
 
                 <p className="signup">
                   ¿Ya tenés cuenta?{" "}
-                  <Link className="link-primary" to="/">
+                  <Link className="link-primary" to="/Login">
                     Iniciar sesión
                   </Link>
                 </p>

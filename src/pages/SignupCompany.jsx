@@ -57,32 +57,17 @@ export default function SignupCompany() {
 
               <form className="form" onSubmit={handleSubmit} noValidate>
                 <div className="field">
-                  <label htmlFor="name">Nombre de la Empresa</label>
+                  <label htmlFor="name">Entidad</label>
                   <input
                     id="name"
                     type="text"
-                    placeholder="Tu nombre"
+                    placeholder="Nombre de la organización"
                     value={form.name}
                     onChange={(e) => update("name", e.target.value)}
                     required
                   />
                   {errors.name && (
                     <div className="field-error">{errors.name}</div>
-                  )}
-                </div>
-
-                <div className="field">
-                  <label htmlFor="lastname">Apellido</label>
-                  <input
-                    id="lastname"
-                    type="text"
-                    placeholder="Tu apellido"
-                    value={form.lastname}
-                    onChange={(e) => update("lastname", e.target.value)}
-                    required
-                  />
-                  {errors.lastname && (
-                    <div className="field-error">{errors.lastname}</div>
                   )}
                 </div>
 
@@ -137,9 +122,7 @@ export default function SignupCompany() {
 
                 <p className="signup">
                   ¿Ya tenés cuenta?{" "}
-                  <Link className="link-primary" to="/LoginCompany">
-                    Iniciar sesión (Empresa)
-                  </Link>
+                  <a href="/LoginCompany" className="text-blue-800">Iniciar sesión (Empresa)</a>
                 </p>
               </form>
             </div>

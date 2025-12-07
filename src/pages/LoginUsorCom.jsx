@@ -53,7 +53,7 @@ const LoginUsorCom = () => {
             </svg>
 
             <div className="p-10 text-blue-950">
-              <a href="/SignupCompany" target="/_self" className=" text-2xl">
+              <a href="/LoginCompany" target="/_self" className=" text-2xl">
                 Empresas
               </a>
               <p className="text-xs py-1.5">
