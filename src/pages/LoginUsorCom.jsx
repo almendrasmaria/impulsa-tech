@@ -7,8 +7,8 @@ const LoginUsorCom = () => {
         <h1 className="text-2xl flex justify-center text-center font-semibold p-5">
           Iniciar Sesión
         </h1>
-        <div className=" w-[80vw] rounded-[10px]">
-          <div className="border border-gray-100 h-full p-10 mb-10 rounded-[10px] flex items-center gap-4">
+        <div className="w-[80vw] rounded-[10px]">
+          <div className="border w-3/4 border-gray-100 h-full p-10 mb-10 rounded-[10px] flex items-center gap-4">
             <svg
               width="72"
               height="78"
@@ -35,7 +35,7 @@ const LoginUsorCom = () => {
             </div>
           </div>
 
-          <div className="border border-gray-100 h-full p-10 mb-10 rounded-[10px] flex items-center gap-4">
+          <div className="border border-gray-100 h-full w-3/4 p-10 mb-10 rounded-[10px] flex items-center gap-4">
             <svg
               width="77"
               height="87"

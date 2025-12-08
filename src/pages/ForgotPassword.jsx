@@ -67,15 +67,23 @@ export default function ForgotPassword() {
                 </button>
 
                 <p className="m-0 text-sm text-[rgba(0,0,0,0.72)]">
-                  <Link className="link-primary" to="/">
+                  <Link className="text-[#1829DB] no-underline font-medium hover:underline" to="/Login">
                     Volver a iniciar sesión
                   </Link>
                 </p>
               </form>
             </div>
 
-            <div className="art-col" aria-hidden="true">
-              <img src={forgotHero} alt="forgot password hero" loading="lazy" />
+            <div
+              className="grid place-items-center max-[980px]:order-first"
+              aria-hidden="true"
+            >
+              <img
+                src={forgotHero}
+                alt="forgot password hero"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

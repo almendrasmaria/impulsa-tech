@@ -1,3 +1,7 @@
+Agregar Los redireccionamiento a HomePage y Preguntas Frecuentes
+
+
+
 import { Link } from "react-router-dom";
 import "../styles.css";
 

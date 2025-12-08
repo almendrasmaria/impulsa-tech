@@ -142,8 +142,16 @@ export default function SignupCompany() {
               </form>
             </div>
 
-            <div className="art-col" aria-hidden="true">
-              <img src={signupHero} alt="signup hero" loading="lazy" />
+            <div
+              className="grid place-items-center max-[980px]:order-first"
+              aria-hidden="true"
+            >
+              <img
+                src={signupHero}
+                alt="signup hero"
+                loading="lazy"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+              />
             </div>
           </div>
         </div>

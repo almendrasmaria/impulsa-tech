@@ -34,8 +34,16 @@ export default function RecoverySent() {
               </div>
             </div>
 
-            <div className="art-col" aria-hidden="true">
-              <img src={recoveryHero} alt="recovery sent hero" loading="lazy" />
+            <div
+              className="grid place-items-center max-[980px]:order-first"
+              aria-hidden="true"
+            >
+              <img
+                src={recoveryHero}
+                alt="recovery sent hero"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

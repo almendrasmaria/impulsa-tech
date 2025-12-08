@@ -83,7 +83,7 @@ export default function Login() {
                     />
 
                     <svg
-                      className="icon-eye"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6"
                       viewBox="0 0 24 24"
                       onClick={() => setShowPass((v) => !v)}
                     >
@@ -139,8 +139,9 @@ export default function Login() {
                 {error && <div className="field-error">{error}</div>}
 
                 <div className="flex items-center justify-between gap-3">
-                  <label className="checkbox">
+                  <label className="checkbox inline-flex items-center gap-2 text-[rgba(0,0,0,0.72)] select-none">
                     <input
+                      className="w-[18px] h-[18px] accent-[#1829DB]"
                       type="checkbox"
                       name="remember"
                       checked={remember}
@@ -149,7 +150,7 @@ export default function Login() {
                     <span>Recordar sesión</span>
                   </label>
 
-                  <Link className="link-muted" to="/forgot-password">
+                  <Link className="hover:underline" to="/forgot-password">
                     ¿Olvidaste tu contraseña?
                   </Link>
                 </div>
@@ -163,15 +164,26 @@ export default function Login() {
 
                 <p className="m-0 text-sm text-[rgba(0,0,0,0.72)]">
                   ¿No tenés cuenta?{" "}
-                  <Link className="link-primary" to="/signup">
+                  <Link
+                    className="text-[#1829DB] no-underline font-medium hover:underline"
+                    to="/signup"
+                  >
                     Crear cuenta
                   </Link>
                 </p>
               </form>
             </div>
 
-            <div className="art-col" aria-hidden="true">
-              <img src={loginHero} alt="login hero" loading="lazy" />
+            <div
+              className="grid place-items-center max-[980px]:order-first"
+              aria-hidden="true"
+            >
+              <img
+                src={loginHero}
+                alt="login hero"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

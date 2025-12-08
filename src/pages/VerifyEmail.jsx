@@ -17,7 +17,10 @@ export default function VerifyEmail() {
               </p>
 
               <div className="grid gap-[18px]" style={{ gap: "12px" }}>
-                <a className="btn-primary" href="#">
+                <a
+                  className="h-[50px] w-full border border-[#1829DB] rounded-lg bg-[#1829DB] text-white font-medium tracking-[0.32px] cursor-pointer inline-flex items-center justify-center hover:brightness-[1.02] active:translate-y-px"
+                  href="#"
+                >
                   Abrir correo
                 </a>
                 <p className="m-0 text-sm text-[rgba(0,0,0,0.72)]">
@@ -39,8 +42,16 @@ export default function VerifyEmail() {
               </div>
             </div>
 
-            <div className="art-col" aria-hidden="true">
-              <img src={verifyHero} alt="verify hero" loading="lazy" />
+            <div
+              className="grid place-items-center max-[980px]:order-first"
+              aria-hidden="true"
+            >
+              <img
+                src={verifyHero}
+                alt="verify hero"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>

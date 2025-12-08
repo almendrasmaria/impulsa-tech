@@ -117,9 +117,10 @@ export default function ContactSupport() {
                   )}
                 </div>
 
-                <label className="checkbox">
+                <label className="checkbox inline-flex items-center gap-2 text-[rgba(0,0,0,0.72)] select-none">
                   <input
                     type="checkbox"
+                    className="w-[18px] h-[18px] accent-[#1829DB]"
                     checked={form.attach}
                     onChange={(e) => update("attach", e.target.checked)}
                   />
@@ -135,17 +136,22 @@ export default function ContactSupport() {
               </form>
             </div>
 
-            <div className="art-col">
+            <div className="grid place-items-center max-[980px]:order-first">
               <p className="text-[rgba(0,0,0,0.72)] text-base tracking-[0.32px] my-2 mb-4">
                 ¿Necesitás ayuda? Contactanos por cualquier inconveniente que
                 tengas.
               </p>
 
-              <img src={supportHero} alt="support hero" loading="lazy" />
+              <img
+                src={supportHero}
+                alt="support hero"
+                loading="lazy"
+                className="max-w-[min(474px,100%)] h-auto block rounded-xl"
+              />
 
               <p className="text-[rgba(0,0,0,0.72)] text-base tracking-[0.32px] my-2 mb-4">
                 <a
-                  className="link-primary"
+                  className="text-[#1829DB] no-underline font-medium hover:underline"
                   href="mailto:soporte@impulsatech.com"
                 >
                   soporte@impulsatech.com
