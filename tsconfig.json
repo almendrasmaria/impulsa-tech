@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "pages/Cookie.tsx", "pages/Terminoscondiciones.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

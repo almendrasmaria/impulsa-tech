@@ -1,4 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import Rutas from "./routes/Rutas.tsx";
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Rutas />
+    </BrowserRouter>
+  );
+};
+
+export default App;
+
+
+/*import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 import Login from "./pages/Login";
@@ -36,3 +50,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
+*/

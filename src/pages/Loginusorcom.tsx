@@ -1,10 +1,10 @@
-import React from 'react'
+
 
 const LoginUsorCom = () => {
   return (
-    <div className="bg-gradient-to-r from-[#f7faff] to-[#f7faff] py-10 flex justify-center">
+    <div className="bg-gradient-to-r from-[#f7faff] to-[#f7faff] py-10 flex m-0 font-[Poppins] bg-[#f7faff] justify-center">
       <div className="bg-white p-10 rounded-2xl max-w-7xl ">
-        <h1 className="text-2xl flex justify-center text-center font-semibold p-5">
+        <h1 className="text-2xl flex justify-center text-center font-bold p-5">
           Iniciar Sesión
         </h1>
         <div className="w-[80vw] rounded-[10px]">
@@ -26,7 +26,7 @@ const LoginUsorCom = () => {
             </svg>
 
             <div className="p-10 text-blue-950">
-              <a href="/login" target="/_self" className=" text-2xl">
+              <a href="/login" target="/_self" className=" font-bold text-2xl">
                 Postulantes
               </a>
               <p className="text-xs py-1.5">
@@ -53,7 +53,11 @@ const LoginUsorCom = () => {
             </svg>
 
             <div className="p-10 text-blue-950">
-              <a href="/LoginCompany" target="/_self" className=" text-2xl">
+              <a
+                href="/LoginCompany"
+                target="/_self"
+                className=" font-bold text-2xl"
+              >
                 Empresas
               </a>
               <p className="text-xs py-1.5">
