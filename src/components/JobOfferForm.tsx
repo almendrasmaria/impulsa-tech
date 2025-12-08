@@ -11,7 +11,7 @@ const defaultData = {
     title: '',
     jornada: '',
     modalidad: '',
-    seniority: '',
+    location: '',
     description: '',
 };
 
@@ -27,12 +27,7 @@ const modalidades = [
     'Remoto',
     'Híbrido',
 ];
-const seniorities = [
-    '',
-    'Junior',
-    'Semi Senior',
-    'Senior',
-];
+
 
 const JobOfferForm: React.FC = () => {
         const [data, setData] = useState(defaultData);
@@ -85,17 +80,14 @@ const JobOfferForm: React.FC = () => {
                                                     <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
                                                 ))}
                                             </Select>
-                            <Label htmlFor="seniority" className="mt-4 text-left">Seniority</Label>
-                                            <Select
+                            <Label htmlFor="location" className="mt-4 text-left">Ubicación</Label>
+                                            <Input
                                                 className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                                                name="seniority"
-                                                value={data.seniority}
+                                                name="location"
+                                                value={data.location}
                                                 onChange={handleChange}
-                                            >
-                                                {seniorities.map((s, i) => (
-                                                    <option key={i} value={s}>{s || 'Selecciona seniority'}</option>
-                                                ))}
-                                            </Select>
+                                                placeholder="Ej: Buenos Aires, Argentina"
+                                            />
                         </div>
                     </div>
                                 <div className="my-6 text-left">
