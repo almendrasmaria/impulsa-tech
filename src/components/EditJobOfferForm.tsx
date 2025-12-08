@@ -18,12 +18,7 @@ const modalidades = [
     'Remoto',
     'Híbrido',
 ];
-const seniorities = [
-    '',
-    'Junior',
-    'Semi Senior',
-    'Senior',
-];
+
 const estados = ['Activa', 'Inactiva'];
 
 interface JobOffer {
@@ -33,7 +28,7 @@ interface JobOffer {
     status: 'Activa' | 'Inactiva';
     jornada?: string;
     modalidad?: string;
-    seniority?: string;
+    location?: string;
     description?: string;
 }
 
@@ -95,17 +90,14 @@ const EditJobOfferForm: React.FC<EditJobOfferFormProps> = ({ offer, onSave, onDe
                     <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
                 ))}
             </Select>
-            <Label htmlFor="seniority" className="mt-4 text-left text-gray-600">Seniority</Label>
-            <Select
-                name="seniority"
-                value={data.seniority || ''}
+            <Label htmlFor="location" className="mt-4 text-left text-gray-600">Ubicación</Label>
+            <Input
+                name="location"
+                value={data.location || ''}
                 onChange={handleChange}
                 className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-            >
-                {seniorities.map((s, i) => (
-                    <option key={i} value={s}>{s || 'Selecciona seniority'}</option>
-                ))}
-            </Select>
+                placeholder="Ej: Buenos Aires, Argentina"
+            />
             <Label htmlFor="description" className="text-left text-gray-600">Descripción</Label>
             <Textarea
                 name="description"
