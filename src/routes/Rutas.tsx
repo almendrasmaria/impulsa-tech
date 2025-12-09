@@ -5,7 +5,7 @@ import CompanyProfilePage from '../pages/CompanyProfilePage';
 import JobOfferFormPage from '../pages/JobOfferFormPage';
 import JobOffersTablePage from '../pages/JobOffersTablePage';
 import PostulantesTablePage from '../pages/PostulantesTablePage';
-import Terminoscondiciones from "../../pages/Terminoscondiciones";
+import Terminoscondiciones from "../pages/Terminoscondiciones";
 
 const Rutas = () => {
   const routes = useRoutes([

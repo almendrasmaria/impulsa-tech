@@ -1,3 +1,9 @@
-# A tener en cuenta cuando unir a Main:
+# Impulsa Tech
 
-Falta modificar el boton de inicio para que lleve al componente HomePage.tsx
+## Instalación
+
+```bash
+git clone https://github.com/almendrasmaria/impulsa-tech.git
+npm install
+npm run dev
+```
