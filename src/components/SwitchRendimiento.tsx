@@ -1,3 +1,14 @@
+/* 
+/*
+En caso de que tire error styled componentes, las dependencias debe tener: 
+
+        "dependencies": {
+            "styled-components": "^6.1.19"
+          },
+
+
+*/
+
 import styled from "styled-components";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
 

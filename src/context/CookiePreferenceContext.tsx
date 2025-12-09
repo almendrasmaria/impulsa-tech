@@ -1,4 +1,6 @@
-
+/*
+Utilizado para CookieAlert 
+*/
 import React, {
   createContext,
   useState,

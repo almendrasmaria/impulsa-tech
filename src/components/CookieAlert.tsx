@@ -1,4 +1,6 @@
-
+/*
+Componente que alerta a los usuarios sobre el uso de las cookies. Sería lo apropiado creo que se presente en el HomePage o en un Layout.
+*/
 import React, { useState } from "react";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
 
