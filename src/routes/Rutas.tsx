@@ -5,6 +5,8 @@ import CompanyProfilePage from '../pages/CompanyProfilePage';
 import JobOfferFormPage from '../pages/JobOfferFormPage';
 import JobOffersTablePage from '../pages/JobOffersTablePage';
 import PostulantesTablePage from '../pages/PostulantesTablePage';
+import ProfilePage from '../pages/ProfilePage';
+import EditProfilePage from '../pages/EditProfilePage';  
 
 const Rutas = () => {
   const routes = useRoutes([
@@ -14,8 +16,11 @@ const Rutas = () => {
     { path: '/oferta', element: <JobOfferFormPage /> },
     { path: '/ofertas', element: <JobOffersTablePage /> },
     { path: '/postulantes', element: <PostulantesTablePage /> },
+    { path: '/perfil', element: <ProfilePage /> }, 
+    { path: '/perfil/editar', element: <EditProfilePage /> }, 
     { path: '*', element: <div style={{ padding: '4rem', textAlign: 'center' }}>Página no encontrada</div> }
   ]);
+
   return routes;
 };
 
