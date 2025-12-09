@@ -1,73 +1,23 @@
-/*
-En caso de que tire error styled componentes, las dependencias debe tener: 
 
-        "dependencies": {
-            "styled-components": "^6.1.19"
-          },
-*/
-
-import styled from "styled-components";
 import React from "react";
 import { useCookiePreferences } from "../context/CookiePreferenceContext";
 
-const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
-  display: none;
-`;
-
-const Slider = styled.span`
-  position: static;
-  width: 60px;
-  height: 30px;
-  background-color: lightgray;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  border: 4px solid transparent;
-  transition: 0.3s;
-  cursor: pointer;
-
-  ${HiddenCheckbox}:checked + & {
-    background-color: #1829db;
-  }
-
-  // Pseudo-elemento ::before
-  &::before {
-    content: "";
-    position: static;
-    display: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    transform: translateX(-30px);
-    border-radius: 20px;
-    transition: 0.3s;
-  }
-
-  ${HiddenCheckbox}:checked + &::before {
-    transform: translateX(30px);
-  }
-
-  ${HiddenCheckbox}:active + &::before {
-    /* ${HiddenCheckbox}:active + &::before {
-        transform: translate(0);
-    } */
-  }
-`;
-
 const SwitchPersonalizacion: React.FC = () => {
-  
   const { personalizacion, togglePersonalizacion } = useCookiePreferences();
 
   return (
-    <label>
-      <HiddenCheckbox
+    <label className="inline-block cursor-pointer">
+      <input
+        type="checkbox"
         id="toggle-personalizacion"
         checked={personalizacion}
-    
-        onChange={togglePersonalizacion} 
+        onChange={togglePersonalizacion}
+        className="hidden peer"
       />
-      <Slider aria-hidden="true" />
+      <span
+        aria-hidden="true"
+        className="flex items-center w-[60px] h-[30px] bg-gray-300 rounded-[20px] overflow-hidden border-4 border-transparent transition-all duration-300 peer-checked:bg-[#1829db] before:content-[''] before:block before:w-full before:h-full before:bg-white before:rounded-[20px] before:-translate-x-[30px] before:transition-all before:duration-300 peer-checked:before:translate-x-[30px]"
+      />
     </label>
   );
 };
