@@ -35,20 +35,20 @@ const Button: React.FC<ButtonProps> = ({
             'primary': {
                 ...baseStyles,
                 color: '#FFFFFF',
-                backgroundColor: '#0058A3',
+                backgroundColor: '#003B80',
                 boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             },
             'secondary': {
                 ...baseStyles,
-                color: '#0058A3',
+                color: '#003B80',
                 backgroundColor: '#FFFFFF',
-                border: '2px solid #0058A3',
+                border: '2px solid #003B80',
                 boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
             },
             'full-width-primary': {
                 ...baseStyles,
                 color: '#FFFFFF',
-                backgroundColor: '#0058A3',
+                backgroundColor: '#003B80',
                 width: '100%',
                 minWidth: 'auto',
                 height: '48px',
@@ -57,9 +57,9 @@ const Button: React.FC<ButtonProps> = ({
             },
             'full-width-secondary': {
                 ...baseStyles,
-                color: '#0058A3',
+                color: '#003B80',
                 backgroundColor: '#FFFFFF',
-                border: '2px solid #0058A3',
+                border: '2px solid #003B80',
                 width: '100%',
                 minWidth: 'auto',
                 height: '48px',
@@ -76,11 +76,11 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
         const button = e.currentTarget
         if (variant === 'secondary' || variant === 'full-width-secondary') {
-            button.style.backgroundColor = '#0058A3'
+            button.style.backgroundColor = '#003B80'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.15)'
         } else {
-            button.style.backgroundColor = '#003B80'
+            button.style.backgroundColor = '#002A5C'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.15)'
         }
@@ -90,10 +90,10 @@ const Button: React.FC<ButtonProps> = ({
         const button = e.currentTarget
         if (variant === 'secondary' || variant === 'full-width-secondary') {
             button.style.backgroundColor = '#FFFFFF'
-            button.style.color = '#0058A3'
+            button.style.color = '#003B80'
             button.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)'
         } else {
-            button.style.backgroundColor = '#0058A3'
+            button.style.backgroundColor = '#003B80'
             button.style.color = '#FFFFFF'
             button.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.1)'
         }

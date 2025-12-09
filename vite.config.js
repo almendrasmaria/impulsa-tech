@@ -1,10 +1,14 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
-  }
-})
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
+  css: {
+    devSourcemap: true,
+  },
+});

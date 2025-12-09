@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useToast } from './ToastProvider';
 import Card from './Card';
 import Button from './Button';
@@ -6,12 +7,13 @@ import Input from './Input';
 import Textarea from './Textarea';
 import Select from './Select';
 import Label from './Label';
+import { LuBriefcase, LuClock, LuMapPin, LuMonitor, LuFileText } from 'react-icons/lu';
 
 const defaultData = {
     title: '',
     jornada: '',
     modalidad: '',
-    seniority: '',
+    location: '',
     description: '',
 };
 
@@ -27,97 +29,180 @@ const modalidades = [
     'Remoto',
     'Híbrido',
 ];
-const seniorities = [
-    '',
-    'Junior',
-    'Semi Senior',
-    'Senior',
-];
+
 
 const JobOfferForm: React.FC = () => {
-        const [data, setData] = useState(defaultData);
+    const [data, setData] = useState(defaultData);
 
-        const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-            setData({ ...data, [e.target.name]: e.target.value });
-        };
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+    };
 
-        const { showToast } = useToast();
-        const handlePublish = () => {
-            showToast('Oferta publicada exitosamente', 'success');
-        };
+    const { showToast } = useToast();
+    const handlePublish = () => {
+        showToast('Oferta publicada exitosamente', 'success');
+    };
 
-        return (
-            <div className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden min-h-screen flex items-center justify-center">
-                <Card className="w-full max-w-2xl rounded-2xl shadow-sm p-6 gap-4" header="Crear oferta" headerClassName="text-left">
-                    <form className="max-w-2xl mx-auto text-gray-600 pt-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <Label htmlFor="title" className="text-left">Título del puesto</Label>
-                                            <Input
-                                                className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                                                name="title"
-                                                value={data.title}
-                                                onChange={handleChange}
-                                                placeholder="Ej: Desarrollador Frontend"
-                                                required
-                                            />
-                            <Label htmlFor="jornada" className="mt-4 text-left">Jornada</Label>
-                                            <Select
-                                                className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                                                name="jornada"
-                                                value={data.jornada}
-                                                onChange={handleChange}
-                                            >
-                                                {jornadas.map((j, i) => (
-                                                    <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
-                                                ))}
-                                            </Select>
-                        </div>
-                        <div>
-                            <Label htmlFor="modalidad" className="text-left">Modalidad</Label>
-                                            <Select
-                                                className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                                                name="modalidad"
-                                                value={data.modalidad}
-                                                onChange={handleChange}
-                                            >
-                                                {modalidades.map((m, i) => (
-                                                    <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
-                                                ))}
-                                            </Select>
-                            <Label htmlFor="seniority" className="mt-4 text-left">Seniority</Label>
-                                            <Select
-                                                className="w-full border border-gray-300 rounded py-3 px-4 mt-1"
-                                                name="seniority"
-                                                value={data.seniority}
-                                                onChange={handleChange}
-                                            >
-                                                {seniorities.map((s, i) => (
-                                                    <option key={i} value={s}>{s || 'Selecciona seniority'}</option>
-                                                ))}
-                                            </Select>
-                        </div>
-                    </div>
-                                <div className="my-6 text-left">
-                                    <Label htmlFor="description" className="text-left">Descripción</Label>
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-[#E8F0FF] via-[#FAFDFF] to-white py-12 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <form>
+                            {/* Header Section */}
+                            <motion.div
+                                className="px-8 pt-8 pb-6 border-b border-gray-200"
+                                initial={{ opacity: 0, y: -20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <h1 className="text-3xl font-bold text-gray-800 mb-2">Crear Nueva Oferta</h1>
+                                <p className="text-gray-600">Completa la información de la oferta laboral</p>
+                            </motion.div>
+
+                            <div className="p-8">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                                    {/* Título */}
+                                    <motion.div
+                                        className="text-left"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.2 }}
+                                    >
+                                        <Label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
+                                            <LuBriefcase className="w-4 h-4 text-[#003B80]" />
+                                            Título del Puesto
+                                        </Label>
+                                        <Input
+                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
+                                            name="title"
+                                            value={data.title}
+                                            onChange={handleChange}
+                                            placeholder="Ej: Desarrollador Frontend"
+                                            required
+                                        />
+                                    </motion.div>
+
+                                    {/* Jornada */}
+                                    <motion.div
+                                        className="text-left"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.3 }}
+                                    >
+                                        <Label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
+                                            <LuClock className="w-4 h-4 text-[#003B80]" />
+                                            Jornada
+                                        </Label>
+                                        <Select
+                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
+                                            name="jornada"
+                                            value={data.jornada}
+                                            onChange={handleChange}
+                                        >
+                                            {jornadas.map((j, i) => (
+                                                <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
+                                            ))}
+                                        </Select>
+                                    </motion.div>
+
+                                    {/* Modalidad */}
+                                    <motion.div
+                                        className="text-left"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.4 }}
+                                    >
+                                        <Label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
+                                            <LuMonitor className="w-4 h-4 text-[#003B80]" />
+                                            Modalidad
+                                        </Label>
+                                        <Select
+                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
+                                            name="modalidad"
+                                            value={data.modalidad}
+                                            onChange={handleChange}
+                                        >
+                                            {modalidades.map((m, i) => (
+                                                <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
+                                            ))}
+                                        </Select>
+                                    </motion.div>
+
+                                    {/* Ubicación */}
+                                    <motion.div
+                                        className="text-left"
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ duration: 0.4, delay: 0.5 }}
+                                    >
+                                        <Label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
+                                            <LuMapPin className="w-4 h-4 text-[#003B80]" />
+                                            Ubicación
+                                        </Label>
+                                        <Input
+                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
+                                            name="location"
+                                            value={data.location}
+                                            onChange={handleChange}
+                                            placeholder="Ej: Buenos Aires, Argentina"
+                                        />
+                                    </motion.div>
+                                </div>
+
+                                {/* Descripción */}
+                                <motion.div
+                                    className="mb-8 text-left"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.6 }}
+                                >
+                                    <Label className="flex items-center gap-2 text-gray-700 font-medium mb-2">
+                                        <LuFileText className="w-4 h-4 text-[#003B80]" />
+                                        Descripción
+                                    </Label>
                                     <Textarea
-                                        className="w-full border border-gray-300 rounded py-3 px-4 mt-1 h-48 resize-none"
+                                        className="w-full border border-gray-300 rounded-lg py-3 px-4 h-40 resize-none transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
                                         name="description"
                                         value={data.description}
                                         onChange={handleChange}
-                                        placeholder="Escribí la descripción del puesto..."
+                                        placeholder="Escribí la descripción del puesto, requisitos, responsabilidades..."
                                         required
                                     />
-                                </div>
-                                <div className="flex justify-end mb-4">
-                                    <Button type="button" onClick={handlePublish} className="bg-[#0058A3] text-white py-2 px-12 mb-10 rounded-full hover:bg-[#003B80] transition-colors">
-                                        Publicar
+                                </motion.div>
+
+                                {/* Botones */}
+                                <motion.div
+                                    className="flex justify-end gap-4"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
+                                    <Button
+                                        type="button"
+                                        variant="secondary"
+                                    >
+                                        Cancelar
                                     </Button>
-                                </div>
-                            </form>
-                        </Card>
-                    </div>
-                );
+                                    <Button
+                                        type="button"
+                                        onClick={handlePublish}
+                                        variant="primary"
+                                    >
+                                        Publicar Oferta
+                                    </Button>
+                                </motion.div>
+                            </div>
+                        </form>
+                    </Card>
+                </motion.div>
+            </div>
+        </div>
+    );
 };
 
 export default JobOfferForm;
