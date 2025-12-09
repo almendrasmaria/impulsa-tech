@@ -1,6 +1,6 @@
 import React from "react";
-import SwitchPersonalizacion from "../src/components/SwitchPersonalizacion";
-import SwitchRendimiento from "../src/components/SwitchRendimiento";
+import SwitchPersonalizacion from "../components/SwitchPersonalizacion";
+import SwitchRendimiento from "../components/SwitchRendimiento";
 
 
 const Cookie: React.FC = () => {
@@ -28,7 +28,7 @@ const Cookie: React.FC = () => {
             .
           </p>
 
-          <h2 className="font-semibold grid justify-center mt-10 mb-10 text-2xl mb-4">
+          <h2 className="font-semibold grid justify-center mt-10 mb-10 text-2xl">
             Tipos de Cookies que utilizamos
           </h2>
 
