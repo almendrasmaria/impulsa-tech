@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Card from './Card';
-import Button from './Button';
 import Modal from './Modal';
 import EditJobOfferForm from './EditJobOfferForm';
 import { LuFileText, LuUsers } from 'react-icons/lu';
