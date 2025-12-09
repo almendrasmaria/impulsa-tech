@@ -82,14 +82,12 @@ const Cookie: React.FC = () => {
             </div>
           </div>
           <div className="flex justify-center mt-4">
-            <button
-              className="text-lg px-6 py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors mb-10"
-              onClick={() => {
-                /* ---------Volver a Inicio (HomePage.tsx) Iria Aqui--------- */
-              }}
+            <a
+              className="text-lg px-6 text-center py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors mb-10"
+              href="/"
             >
               Volver al Inicio
-            </button>
+            </a>
           </div>
         </div>
       </div>
