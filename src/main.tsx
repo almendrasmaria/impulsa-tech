@@ -19,6 +19,7 @@ createRoot(rootElement).render(
 );
 
 /*
-En el caso de que se no se aplique Cookie Alert por x motivo, eliminar CookieProvider
+En el caso de que se no se aplique Cookie Alert (Mensaje de aceptar, rechazar o personalizar las cookies) 
+por x motivo, se puede eliminar CookieProvider. No se está llamando al componente en ninguna página. 
 */
 
