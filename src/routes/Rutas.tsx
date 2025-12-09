@@ -3,6 +3,7 @@ import HomePage from '../pages/HomePage';
 import OpportunitiesPage from "../pages/OpportunitiesPage";
 import CompanyProfilePage from '../pages/CompanyProfilePage';
 import CompanyDashboardPage from '../pages/CompanyDashboardPage';
+import PublicCompanyProfilePage from '../pages/PublicCompanyProfilePage';
 import JobOfferFormPage from '../pages/JobOfferFormPage';
 import JobOffersTablePage from '../pages/JobOffersTablePage';
 import PostulantesTablePage from '../pages/PostulantesTablePage';
@@ -14,6 +15,7 @@ const Rutas = () => {
     { path: '/', element: <HomePage /> },
     { path: "/oportunidades", element: <OpportunitiesPage /> },
     { path: '/perfil-empresa', element: <CompanyProfilePage /> },
+    { path: '/empresa/:id', element: <PublicCompanyProfilePage /> },
     { path: '/panel-empresa', element: <CompanyDashboardPage /> },
     { path: '/crear-oferta', element: <JobOfferFormPage /> },
     { path: '/mis-ofertas', element: <JobOffersTablePage /> },
