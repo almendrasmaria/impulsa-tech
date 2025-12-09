@@ -11,6 +11,7 @@ import ProfilePage from '../pages/ProfilePage';
 import EditProfilePage from '../pages/EditProfilePage';  
 import Terminoscondiciones from "../pages/Terminoscondiciones";  
 import Cookie from "../pages/Cookie";  
+import DetalleEmpleoPage from '../pages/DetalleEmpleoPage';  
 
 const Rutas = () => {
   const routes = useRoutes([
@@ -24,6 +25,7 @@ const Rutas = () => {
     { path: '/postulantes', element: <PostulantesTablePage /> },
     { path: '/perfil', element: <ProfilePage /> }, 
     { path: '/perfil/editar', element: <EditProfilePage /> },
+    { path: '/oferta/:id', element: <DetalleEmpleoPage /> },
     { path: "/cookie", element: <Cookie /> },  
     { path: "/Terminos", element: <Terminoscondiciones /> }, 
     { path: '*', element: <div style={{ padding: '4rem', textAlign: 'center' }}>Página no encontrada</div> }
