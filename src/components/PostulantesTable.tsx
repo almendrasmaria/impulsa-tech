@@ -45,17 +45,21 @@ const TableHeaderCell = ({ children, className }: { children: React.ReactNode; c
     <th className={`py-3 px-4 align-middle font-semibold text-gray-700 text-sm max-w-full break-words ${className || ''}`}>{children}</th>
 );
 
-const PostulantesTable: React.FC = () => {
+interface PostulantesTableProps {
+    showBackground?: boolean;
+}
+
+const PostulantesTable: React.FC<PostulantesTableProps> = ({ showBackground = true }) => {
     const [postulantes, setPostulantes] = useState(initialPostulantes);
     const { showToast } = useToast();
 
     const handleEstadoChange = (id: number, nuevoEstado: string) => {
         setPostulantes(postulantes.map(p => p.id === id ? { ...p, estado: nuevoEstado } : p));
-        showToast(`Estado actualizado a "${nuevoEstado}"`, 'success');
+        showToast(`Estado actualizado a "${nuevoEstado}"`);
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#E8F0FF] via-[#FAFDFF] to-white py-12 px-4 sm:px-6 lg:px-12">
+        <div className={showBackground ? "min-h-screen bg-gradient-to-br from-[#E8F0FF] via-[#FAFDFF] to-white py-12 px-4 sm:px-6 lg:px-12" : "py-6"}>
             <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

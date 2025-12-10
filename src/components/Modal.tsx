@@ -18,13 +18,14 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
                 >
                     <motion.div
-                        initial={{ scale: 0.9, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.9, opacity: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="w-full max-w-lg mx-4 md:mx-8 lg:mx-0 my-8 md:my-16 overflow-y-auto max-h-[calc(100vh-4rem)]"
+                        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                        animate={{ scale: 1, opacity: 1, y: 0 }}
+                        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="w-full max-w-4xl mx-4 md:mx-8 lg:mx-0 my-8 md:my-16 overflow-y-auto max-h-[calc(100vh-4rem)] custom-scrollbar"
                     >
                         <Card className="relative p-6" header={title} headerClassName="text-left">
                             <button

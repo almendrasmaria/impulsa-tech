@@ -76,14 +76,10 @@ const CompanyDashboardPage: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                    <Card className="p-6">
-                        <div className="flex justify-between items-center mb-6">
-                            <div>
-                                <h2 className="text-2xl font-bold text-gray-800">Postulantes Recientes</h2>
-                                <p className="text-gray-600 text-sm mt-1">Gestiona los candidatos a tus ofertas</p>
-                            </div>
+                    <Card className="p-6 bg-white">
+                        <div className="bg-white">
+                            <PostulantesTable showBackground={false} />
                         </div>
-                        <PostulantesTable />
                     </Card>
                 </motion.div>
             </main>

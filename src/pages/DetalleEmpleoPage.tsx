@@ -1,9 +1,9 @@
-import Cuerpo from "../components/Cuerpo";
+import JobOffer from "../components/JobOffer";
 
 const DetalleEmpleoPage = () => {
   return (
     <>
-      <Cuerpo />
+      <JobOffer />
     </>
   );
 };
