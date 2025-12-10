@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
 interface Toast {
@@ -22,9 +22,6 @@ export const useToast = () => {
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
 
-    const removeToast = (id: number) => {
-        setToasts(prev => prev.filter(t => t.id !== id));
-    };
 
     const showToast = (message: string, type: Toast['type'] = 'info') => {
         const id = Date.now();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Share2, Link, Mail, MessageSquare, Linkedin, Calendar, Clock, MapPin, Briefcase, Users } from 'lucide-react';
+import { Share2, Link, Mail, MessageSquare, Linkedin, Calendar, Clock, Briefcase, Users } from 'lucide-react';
 import { useToast } from './ToastProvider';
 import Card from './Card';
 import Button from './Button';

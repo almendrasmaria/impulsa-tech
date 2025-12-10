@@ -126,14 +126,9 @@ const PostulantesTable: React.FC<PostulantesTableProps> = ({ showBackground = tr
                                                     <span className="block md:hidden text-xs text-gray-500 mb-1">Estado</span>
                                                     <Select
                                                         value={postulante.estado}
-                                                        onChange={e => handleEstadoChange(postulante.id, e.target.value)}
-                                                        className="border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#003B80]/20 focus:border-[#003B80] w-full transition-all"
-                                                        name="estado"
-                                                    >
-                                                        {estados.map(e => (
-                                                            <option key={e} value={e}>{e}</option>
-                                                        ))}
-                                                    </Select>
+                                                        onChange={(value) => handleEstadoChange(postulante.id, value)}
+                                                        options={estados.map(e => ({ value: e, label: e }))}
+                                                    />
                                                 </TableCell>
                                                 <TableCell className="md:table-cell flex flex-col md:flex-row md:items-center max-w-full break-words">
                                                     <span className="block md:hidden text-xs text-gray-500 mb-1">Acción</span>

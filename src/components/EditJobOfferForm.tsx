@@ -6,7 +6,7 @@ import Select from './Select';
 import Textarea from './Textarea';
 import Button from './Button';
 import Label from './Label';
-import { LuBriefcase, LuClock, LuMonitor, LuMapPin, LuFileText, LuToggleLeft } from 'react-icons/lu';
+import { LuBriefcase, LuClock, LuMonitor, LuMapPin, LuFileText } from 'react-icons/lu';
 
 const jornadas = [
     '',
@@ -21,7 +21,6 @@ const modalidades = [
     'Híbrido',
 ];
 
-const estados = ['Activa', 'Inactiva'];
 
 interface JobOffer {
     id: number;
@@ -44,8 +43,12 @@ const EditJobOfferForm: React.FC<EditJobOfferFormProps> = ({ offer, onSave, onDe
     const [data, setData] = useState<JobOffer>({ ...offer });
     const { showToast } = useToast();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setData({ ...data, [e.target.name]: e.target.value });
+    };
+
+    const handleSelectChange = (name: string) => (value: string) => {
+        setData({ ...data, [name]: value });
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -100,15 +103,11 @@ const EditJobOfferForm: React.FC<EditJobOfferFormProps> = ({ offer, onSave, onDe
                             Jornada
                         </Label>
                         <Select
-                            name="jornada"
                             value={data.jornada || ''}
-                            onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
-                        >
-                            {jornadas.map((j, i) => (
-                                <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
-                            ))}
-                        </Select>
+                            onChange={handleSelectChange('jornada')}
+                            placeholder="Selecciona jornada"
+                            options={jornadas.filter(j => j).map(j => ({ value: j, label: j }))}
+                        />
                     </motion.div>
 
                     {/* Modalidad */}
@@ -123,15 +122,11 @@ const EditJobOfferForm: React.FC<EditJobOfferFormProps> = ({ offer, onSave, onDe
                             Modalidad
                         </Label>
                         <Select
-                            name="modalidad"
                             value={data.modalidad || ''}
-                            onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
-                        >
-                            {modalidades.map((m, i) => (
-                                <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
-                            ))}
-                        </Select>
+                            onChange={handleSelectChange('modalidad')}
+                            placeholder="Selecciona modalidad"
+                            options={modalidades.filter(m => m).map(m => ({ value: m, label: m }))}
+                        />
                     </motion.div>
 
                     {/* Ubicación */}
