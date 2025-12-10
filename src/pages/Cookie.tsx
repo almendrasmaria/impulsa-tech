@@ -1,97 +1,155 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Cookie as CookieIcon, ArrowLeft, Shield, Sliders, BarChart3 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import SwitchPersonalizacion from "../components/SwitchPersonalizacion";
 import SwitchRendimiento from "../components/SwitchRendimiento";
+import Card from "../components/Card";
+import Button from "../components/Button";
 
 
 const Cookie: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
-    <>
-      <div className="bg-gradient-to-r from-[#f7faff] to-[#f7faff] font-Poppins grid justify-center align-center">
-        <div className=' bg-white w-[80vw] rounded-[10px] p-7 mt-4 ml-3 mb-10 mr-2 gap-9"'>
-          <h1 className="font-semibold grid justify-center mt-5 mb-7 text-2xl">
-            Políticas de Cookies
-          </h1>
-          <p>
-            En Impulsa Tech utilizamos cookies para brindarte una mejor
-            experiencia de navegación, optimizar el funcionamiento de nuestra
-            plataforma y ofrecerte contenido adaptado a tus intereses. Las
-            cookies son pequeños archivos que se almacenan en tu dispositivo al
-            visitar un sitio web. A través de ellas, podemos recordar tus
-            preferencias, analizar el uso del sitio y mostrarte información
-            personalizada. También puedes leer nuestros{" "}
-            <a
-              href="/terminos"
-              className="text-blue-700"
-            >
-              Términos y Condiciones
-            </a>
-            .
-          </p>
-
-          <h2 className="font-semibold grid justify-center mt-10 mb-10 text-2xl">
-            Tipos de Cookies que utilizamos
-          </h2>
-
-          <div className="grid-cols-1 place-items-center ">
-            <div className="w-[60vw] rounded-[10px] p-2 bg-white border-2 border-gray-200">
-              <div className="flex justify-between items-center font-bold  m-2 ml-3">
-                <p>Cookies Esenciales</p>
-                <button className="bg-blue-700 text-white flex justify-center items-center font-semibold rounded-full h-10 w-[150px]">
-                  Activas Siempre
-                </button>
+    <div className="min-h-screen bg-gradient-to-br from-[#E8F0FF] via-[#FAFDFF] to-white font-Poppins py-12 px-4">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#003B80] to-[#0058A3] text-white p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <CookieIcon className="w-10 h-10" />
+                <h1 className="font-bold text-3xl">
+                  Políticas de Cookies
+                </h1>
               </div>
             </div>
-            <div className="bg-white border border-gray-100 w-[60vw] mb-8 p-8 rounded-t-xs rounded-b-xl">
-              <p>
-                Son necesarias para el funcionamiento básico de la plataforma ya
-                que permiten iniciar sesión, mantener la seguridad de la cuenta
-                y recordar tus postulaciones.{" "}
-                <b>
-                  Estas cookies se instalan de manera automática y no pueden
-                  desactivarse.
-                </b>
-              </p>
-            </div>
 
-            <div className="w-[60vw] rounded-[10px] p-2 bg-white border-2 border-gray-200">
-              <div className="flex justify-between items-center font-bold m-3">
-                <p>Cookies de Personalización</p>
-                <SwitchPersonalizacion />
+            <div className="p-8">
+              <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                En Impulsa Tech utilizamos cookies para brindarte una mejor
+                experiencia de navegación, optimizar el funcionamiento de nuestra
+                plataforma y ofrecerte contenido adaptado a tus intereses. Las
+                cookies son pequeños archivos que se almacenan en tu dispositivo al
+                visitar un sitio web. A través de ellas, podemos recordar tus
+                preferencias, analizar el uso del sitio y mostrarte información
+                personalizada. También puedes leer nuestros{" "}
+                <a
+                  href="/terminos"
+                  className="text-[#003B80] hover:text-[#0058A3] font-semibold underline"
+                >
+                  Términos y Condiciones
+                </a>
+                .
+              </p>
+
+              <h2 className="font-bold text-2xl text-[#003B80] text-center mt-8 mb-8">
+                Tipos de Cookies que utilizamos
+              </h2>
+
+              <div className="space-y-6">
+                {/* Essential Cookies */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="border-2 border-[#E8F0FF] rounded-xl overflow-hidden hover:border-[#003B80] transition-colors"
+                >
+                  <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <Shield className="w-6 h-6 text-[#003B80]" />
+                        <p className="font-bold text-[#003B80]">Cookies Esenciales</p>
+                      </div>
+                      <button className="bg-[#003B80] text-white flex justify-center items-center font-semibold rounded-full h-10 px-6 text-sm">
+                        Activas Siempre
+                      </button>
+                    </div>
+                  </div>
+                  <div className="bg-white p-6">
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Son necesarias para el funcionamiento básico de la plataforma ya
+                      que permiten iniciar sesión, mantener la seguridad de la cuenta
+                      y recordar tus postulaciones.{" "}
+                      <b>
+                        Estas cookies se instalan de manera automática y no pueden
+                        desactivarse.
+                      </b>
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Personalization Cookies */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="border-2 border-[#E8F0FF] rounded-xl overflow-hidden hover:border-[#003B80] transition-colors"
+                >
+                  <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <Sliders className="w-6 h-6 text-[#003B80]" />
+                        <p className="font-bold text-[#003B80]">Cookies de Personalización</p>
+                      </div>
+                      <SwitchPersonalizacion />
+                    </div>
+                  </div>
+                  <div className="bg-white p-6">
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Guardan tus elecciones, como idioma, región o configuraciones de
+                      accesibilidad. Mejoran tu experiencia adaptando el sitio a tus
+                      necesidades.
+                    </p>
+                  </div>
+                </motion.div>
+
+                {/* Performance Cookies */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="border-2 border-[#E8F0FF] rounded-xl overflow-hidden hover:border-[#003B80] transition-colors"
+                >
+                  <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex items-center gap-3">
+                        <BarChart3 className="w-6 h-6 text-[#003B80]" />
+                        <p className="font-bold text-[#003B80]">Cookies de Rendimiento</p>
+                      </div>
+                      <SwitchRendimiento />
+                    </div>
+                  </div>
+                  <div className="bg-white p-6">
+                    <p className="text-gray-700 text-sm leading-relaxed">
+                      Recopilan datos anónimos sobre cómo usás la plataforma (páginas
+                      visitadas, tiempo de navegación, errores). Nos permiten mejorar
+                      la usabilidad y el rendimiento de nuestro servicio.
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+
+              {/* Back Button */}
+              <div className="flex justify-center mt-8">
+                <Button
+                  onClick={() => navigate("/")}
+                  className="bg-[#003B80] hover:bg-[#0058A3] text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2 transition-colors"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  Volver al Inicio
+                </Button>
               </div>
             </div>
-            <div className="bg-white w-[60vw] mb-8 p-8 rounded-t-xs rounded-b-xl border border-gray-100">
-              <p>
-                Guardan tus elecciones, como idioma, región o configuraciones de
-                accesibilidad. Mejoran tu experiencia adaptando el sitio a tus
-                necesidades.
-              </p>
-            </div>
-
-            <div className="w-[60vw] rounded-[10px] p-2 border-2 border-gray-200 bg-white">
-              <div className="flex justify-between items-center font-bold m-2">
-                <p>Cookies de Rendimiento</p>
-                <SwitchRendimiento />
-              </div>
-            </div>
-            <div className="bg-white w-[60vw] mb-8 p-8 rounded-t-xs border border-gray-100 rounded-b-xl">
-              <p>
-                Recopilan datos anónimos sobre cómo usás la plataforma (páginas
-                visitadas, tiempo de navegación, errores). Nos permiten mejorar
-                la usabilidad y el rendimiento de nuestro servicio.
-              </p>
-            </div>
-          </div>
-          <div className="flex justify-center mt-4">
-            <a
-              className="text-lg px-6 text-center py-4 font-bold cursor-pointer border-none rounded-2xl text-white w-full sm:w-1/2 max-w-sm bg-blue-700 hover:bg-blue-900 transition-colors mb-10"
-              href="/"
-            >
-              Volver al Inicio
-            </a>
-          </div>
-        </div>
+          </Card>
+        </motion.div>
       </div>
-    </>
+    </div>
   );
 };
 

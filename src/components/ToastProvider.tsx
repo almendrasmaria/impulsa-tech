@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
+import { CheckCircle2 } from 'lucide-react';
 
 interface Toast {
     id: number;
@@ -21,9 +22,6 @@ export const useToast = () => {
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
 
-    const removeToast = (id: number) => {
-        setToasts(prev => prev.filter(t => t.id !== id));
-    };
 
     const showToast = (message: string, type: Toast['type'] = 'info') => {
         const id = Date.now();
@@ -36,33 +34,16 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
     return (
         <ToastContext.Provider value={{ showToast }}>
             {children}
-            <div className="fixed bottom-6 right-6 z-[9999] flex flex-col gap-2 items-end">
+            <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 items-center">
                 {toasts.map(toast => (
                     <div
                         key={toast.id}
-                        className={`px-4 py-2 rounded shadow font-medium transition-all bg-white relative flex items-center min-w-[220px]`}
+                        className="bg-[#003B80] text-white px-4 py-2 rounded-full shadow-2xl flex items-center space-x-2 border border-blue-400 animate-bounce-in"
                     >
-                        <span className="text-gray-700 flex-1 pr-4">{toast.message}</span>
-                        <button
-                            aria-label="Cerrar"
-                            onClick={() => removeToast(toast.id)}
-                            className="ml-2 text-gray-400 hover:text-gray-700 text-lg font-bold focus:outline-none"
-                            style={{ lineHeight: 1 }}
-                        >
-                            ×
-                        </button>
-                        <div
-                            className={`absolute left-0 bottom-0 h-1 rounded-b ${toast.type === 'success' ? 'bg-green-600' : toast.type === 'error' ? 'bg-red-600' : 'bg-blue-600'}`}
-                            style={{ width: '100%', animation: 'toast-progress 3s linear forwards' }}
-                        />
+                        <CheckCircle2 className="w-4 h-4 text-blue-200" />
+                        <span className="font-semibold text-sm">{toast.message}</span>
                     </div>
                 ))}
-                <style>{`
-                    @keyframes toast-progress {
-                        from { width: 100%; }
-                        to { width: 0%; }
-                    }
-                `}</style>
             </div>
         </ToastContext.Provider>
     );

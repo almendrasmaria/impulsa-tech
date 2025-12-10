@@ -55,13 +55,11 @@ const CompanyProfile: React.FC<CompanyProfileProps> = ({ initialData }) => {
         setData({ ...data, avatar: '' });
     };
 
-
-
     const { showToast } = useToast();
     const handleEdit = () => setEditMode(true);
     const handleSave = () => {
         setEditMode(false);
-        showToast('Perfil actualizado exitosamente', 'success');
+        showToast('¡Perfil actualizado exitosamente!');
     };
 
     return (

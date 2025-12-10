@@ -34,8 +34,12 @@ const modalidades = [
 const JobOfferForm: React.FC = () => {
     const [data, setData] = useState(defaultData);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setData({ ...data, [e.target.name]: e.target.value });
+    };
+
+    const handleSelectChange = (name: string) => (value: string) => {
+        setData({ ...data, [name]: value });
     };
 
     const { showToast } = useToast();
@@ -99,15 +103,11 @@ const JobOfferForm: React.FC = () => {
                                             Jornada
                                         </Label>
                                         <Select
-                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
-                                            name="jornada"
                                             value={data.jornada}
-                                            onChange={handleChange}
-                                        >
-                                            {jornadas.map((j, i) => (
-                                                <option key={i} value={j}>{j || 'Selecciona jornada'}</option>
-                                            ))}
-                                        </Select>
+                                            onChange={handleSelectChange('jornada')}
+                                            placeholder="Selecciona jornada"
+                                            options={jornadas.filter(j => j).map(j => ({ value: j, label: j }))}
+                                        />
                                     </motion.div>
 
                                     {/* Modalidad */}
@@ -122,15 +122,11 @@ const JobOfferForm: React.FC = () => {
                                             Modalidad
                                         </Label>
                                         <Select
-                                            className="w-full border border-gray-300 rounded-lg py-3 px-4 transition-all focus:border-[#003B80] focus:ring-2 focus:ring-[#003B80]/20"
-                                            name="modalidad"
                                             value={data.modalidad}
-                                            onChange={handleChange}
-                                        >
-                                            {modalidades.map((m, i) => (
-                                                <option key={i} value={m}>{m || 'Selecciona modalidad'}</option>
-                                            ))}
-                                        </Select>
+                                            onChange={handleSelectChange('modalidad')}
+                                            placeholder="Selecciona modalidad"
+                                            options={modalidades.filter(m => m).map(m => ({ value: m, label: m }))}
+                                        />
                                     </motion.div>
 
                                     {/* Ubicación */}
