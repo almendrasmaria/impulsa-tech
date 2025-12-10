@@ -51,14 +51,14 @@ const ofertaData: Oferta = {
 
 const Tag: React.FC<{ children: React.ReactNode, type?: 'skill' | 'level' | 'modality' | 'jornada' }> = ({ children, type = 'skill' }) => {
     let baseStyles = 'px-3 py-1 rounded-lg text-sm font-semibold transition-colors duration-200';
-    
+
     switch (type) {
         case 'skill':
         case 'modality':
             baseStyles += ' bg-blue-100 text-blue-800';
             break;
         case 'level':
-            baseStyles += ' bg-indigo-100 text-indigo-800'; 
+            baseStyles += ' bg-indigo-100 text-indigo-800';
             break;
         case 'jornada':
             baseStyles += ' bg-gray-200 text-gray-700';
@@ -70,38 +70,38 @@ const Tag: React.FC<{ children: React.ReactNode, type?: 'skill' | 'level' | 'mod
     return <span className={baseStyles}>{children}</span>;
 };
 
-const CollapsibleSection: React.FC<{ 
-    titulo: string; 
-    contenido: React.ReactNode; 
-    isOpen: boolean; 
+const CollapsibleSection: React.FC<{
+    titulo: string;
+    contenido: React.ReactNode;
+    isOpen: boolean;
     onToggle: () => void;
 }> = ({ titulo, contenido, isOpen, onToggle }) => {
     return (
         <div className="border-b border-gray-200 lg:border-none">
             <button
                 onClick={onToggle}
-                className="w-full flex justify-between items-center py-4 text-left font-bold text-gray-800 focus:outline-none lg:p-0 relative z-10" 
+                className="w-full flex justify-between items-center py-4 text-left font-bold text-gray-800 focus:outline-none lg:p-0 relative z-10"
                 aria-expanded={isOpen}
             >
                 <span className="text-base md:text-lg text-blue-800">{titulo}</span>
-                <svg 
-                    className={`w-5 h-5 text-blue-600 transition-transform duration-300 lg:hidden ${isOpen ? 'transform rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24" 
+                <svg
+                    className={`w-5 h-5 text-blue-600 transition-transform duration-300 lg:hidden ${isOpen ? 'transform rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg"
                 >
-                    <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth="2" 
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M19 9l-7 7-7-7"
                     ></path>
                 </svg>
             </button>
 
-            <div 
-                className={`transition-all duration-500 ease-in-out ${isOpen ? 'max-h-screen opacity-100 pb-4 lg:pb-0' : 'max-h-0 opacity-0 p-0'}`} 
+            <div
+                className={`transition-all duration-500 ease-in-out ${isOpen ? 'max-h-screen opacity-100 pb-4 lg:pb-0' : 'max-h-0 opacity-0 p-0'}`}
             >
                 <div className="lg:block">
                     {contenido}
@@ -127,7 +127,7 @@ const DetalleOferta: React.FC = () => {
     const toggleSection = (section: string) => {
         setOpenSection(openSection === section ? null : section);
     };
-    
+
     const toggleShareMenu = () => {
         setIsShareMenuOpen(!isShareMenuOpen);
     };
@@ -137,7 +137,7 @@ const DetalleOferta: React.FC = () => {
             navigator.clipboard.writeText(window.location.href);
             showToast('¡Enlace copiado correctamente!');
         }
-        setIsShareMenuOpen(false); 
+        setIsShareMenuOpen(false);
     };
 
     const offerUrl = "https://www.impulsatech.com/oferta/123";
@@ -165,9 +165,9 @@ const DetalleOferta: React.FC = () => {
                 <div className="lg:w-2/3 space-y-6">
                     <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8">
                         <div className="flex items-start mb-4">
-                            <img 
-                                src={ofertaData.logoUrl} 
-                                alt="Logo de la Empresa" 
+                            <img
+                                src={ofertaData.logoUrl}
+                                alt="Logo de la Empresa"
                                 className="w-12 h-12 object-contain mr-4 rounded-lg"
                             />
                             <div>
@@ -193,18 +193,18 @@ const DetalleOferta: React.FC = () => {
                             <Tag type="modality">{ofertaData.modalidad}</Tag>
                             <Tag type="level">{ofertaData.nivel}</Tag>
                         </div>
-                        
-                         <div className="lg:hidden flex justify-between items-center text-sm text-gray-500 border-t pt-4">
+
+                        <div className="lg:hidden flex justify-between items-center text-sm text-gray-500 border-t pt-4">
                             <p>Publicado: {ofertaData.publicado}</p>
                             <Tag type="jornada">{ofertaData.jornada}</Tag>
                         </div>
                     </div>
-                    
+
                     <div className="bg-white rounded-xl shadow-lg p-6 lg:p-8">
                         <div className="space-y-6 detalle-oferta-acordeon">
                             <CollapsibleSection
                                 titulo="Descripcion breve"
-                                isOpen={openSection === 'descripcion'} 
+                                isOpen={openSection === 'descripcion'}
                                 onToggle={() => toggleSection('descripcion')}
                                 contenido={
                                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -238,7 +238,7 @@ const DetalleOferta: React.FC = () => {
                                     </ul>
                                 }
                             />
-                            
+
                             <CollapsibleSection
                                 titulo="Beneficios"
                                 isOpen={openSection === 'beneficios'}
@@ -260,15 +260,15 @@ const DetalleOferta: React.FC = () => {
                         <h3 className="text-lg font-bold text-gray-900 mb-4">Información del Puesto</h3>
                         <div className="space-y-2 text-gray-700 mb-6">
                             <p className="flex justify-between">
-                                <span className="font-semibold">Inicio:</span> 
+                                <span className="font-semibold">Inicio:</span>
                                 <span>{ofertaData.inicio}</span>
                             </p>
                             <p className="flex justify-between">
-                                <span className="font-semibold">Duración:</span> 
+                                <span className="font-semibold">Duración:</span>
                                 <span>{ofertaData.duracion}</span>
                             </p>
                             <p className="flex justify-between">
-                                <span className="font-semibold">Horas/sem:</span> 
+                                <span className="font-semibold">Horas/sem:</span>
                                 <span>{ofertaData.horasSemana}</span>
                             </p>
                         </div>
@@ -279,7 +279,7 @@ const DetalleOferta: React.FC = () => {
                         >
                             Postularme ahora
                         </button>
-                        
+
                         <div className="relative">
                             <button
                                 className="w-full bg-white border border-blue-700 text-blue-700 hover:bg-blue-50 font-bold py-3 rounded-xl transition duration-300 flex items-center justify-center"
