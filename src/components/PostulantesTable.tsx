@@ -84,7 +84,7 @@ const PostulantesTable: React.FC<PostulantesTableProps> = ({ showBackground = tr
                         </motion.div>
 
                         <div className="p-8">
-                            <div className="overflow-x-auto">
+                            <div className="overflow-x-auto max-h-[600px] overflow-y-auto custom-scrollbar">
                                 <Table>
                                     <thead className="hidden md:table-header-group">
                                         <TableRow>
