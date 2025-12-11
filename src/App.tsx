@@ -20,8 +20,6 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import RecoverySent from "./pages/RecoverySent";
 import VerifyEmail from "./pages/VerifyEmail";
-import ContactSupport from "./pages/ContactSupport";
-import SupportSent from "./pages/SupportSent";
 
 import "./styles.css";
 import LoginUsorCom from "./pages/LoginUsorCom";
@@ -39,8 +37,6 @@ export default function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/recovery-sent" element={<RecoverySent />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/contact-support" element={<ContactSupport />} />
-        <Route path="/support-sent" element={<SupportSent />} />
         <Route path="/LoginUsorCom" element={<LoginUsorCom />} />
         <Route path="/LoginCompany" element={<LoginCompany />} />
         <Route path="/SignupCompany" element={<SignupCompany />} />

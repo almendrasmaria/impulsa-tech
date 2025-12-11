@@ -5,8 +5,6 @@ import Signup from "../pages/Signup";
 import ForgotPassword from "../pages/ForgotPassword";
 import RecoverySent from "../pages/RecoverySent";
 import VerifyEmail from "../pages/VerifyEmail";
-import Contactsupport from "../pages/ContactSupport";
-import SupportSent from "../pages/SupportSent";
 import LoginCompany from "../pages/LoginCompany";
 import SignupCompany from "../pages/SignupCompany";
 
@@ -20,8 +18,6 @@ const Rutas = () => {
     { path: "/forgot-password", element: <ForgotPassword /> },
     { path: "/recovery-sent", element: <RecoverySent /> },
     { path: "/verify-email", element: <VerifyEmail /> },
-    { path: "/contact-support", element: <Contactsupport /> },
-    { path: "/support-sent", element: <SupportSent /> },
     { path: "/LoginCompany", element: <LoginCompany /> },
     { path: "/SignupCompany", element: <SignupCompany /> },
 
@@ -32,8 +28,6 @@ const Rutas = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/recovery-sent" element={<RecoverySent />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
-        <Route path="/contact-support" element={<ContactSupport />} />
-        <Route path="/support-sent" element={<SupportSent />} />
         <Route path="/LoginUsorCom" element={<LoginUsorCom />} />
         <Route path="/LoginCompany" element={<LoginCompany />} />
         <Route path="/SignupCompany" element={<SignupCompany />} />
