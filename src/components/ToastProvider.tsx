@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { FaCheckCircle } from "react-icons/fa"; 
 
 interface Toast {
     id: number;
@@ -22,7 +22,6 @@ export const useToast = () => {
 export const ToastProvider = ({ children }: { children: ReactNode }) => {
     const [toasts, setToasts] = useState<Toast[]>([]);
 
-
     const showToast = (message: string, type: Toast['type'] = 'info') => {
         const id = Date.now();
         setToasts(prev => [...prev, { id, message, type }]);
@@ -34,13 +33,14 @@ export const ToastProvider = ({ children }: { children: ReactNode }) => {
     return (
         <ToastContext.Provider value={{ showToast }}>
             {children}
+
             <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 items-center">
                 {toasts.map(toast => (
                     <div
                         key={toast.id}
                         className="bg-[#003B80] text-white px-4 py-2 rounded-full shadow-2xl flex items-center space-x-2 border border-blue-400 animate-bounce-in"
                     >
-                        <CheckCircle2 className="w-4 h-4 text-blue-200" />
+                        <FaCheckCircle className="w-4 h-4 text-blue-200" /> {/* Ícono reemplazado */}
                         <span className="font-semibold text-sm">{toast.message}</span>
                     </div>
                 ))}

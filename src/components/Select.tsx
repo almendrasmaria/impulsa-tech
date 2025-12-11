@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { FaChevronDown } from 'react-icons/fa'; 
 import classNames from 'classnames';
 
 interface SelectProps {
@@ -54,7 +54,7 @@ const Select: React.FC<SelectProps> = ({
                 )}
             >
                 <span>{selectedOption ? selectedOption.label : placeholder}</span>
-                <ChevronDown className={classNames(
+                <FaChevronDown className={classNames(
                     'w-4 h-4 text-gray-500 transition-transform',
                     isOpen && 'rotate-180'
                 )} />

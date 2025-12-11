@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Share2, Link, Mail, MessageSquare, Linkedin, Calendar, Clock, Briefcase, Users } from 'lucide-react';
+
+import {
+  FaShareAlt,
+  FaLink,
+  FaEnvelope,
+  FaWhatsapp,
+  FaLinkedin,
+  FaCalendarAlt,
+  FaClock,
+  FaBriefcase,
+  FaUsers
+} from "react-icons/fa";
+
 import { useToast } from './ToastProvider';
 import Card from './Card';
 import Button from './Button';
@@ -97,7 +109,6 @@ const CollapsibleSection: React.FC<{
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
                 >
                     <path
                         strokeLinecap="round"
@@ -150,10 +161,10 @@ const DetalleOferta: React.FC = () => {
     const offerTitle = "Desarrollador Frontend - Empresa X";
 
     const shareOptions = [
-        { name: 'Copiar Enlace', icon: Link, action: () => handleShareAction('enlace') },
-        { name: 'WhatsApp', icon: MessageSquare, action: () => window.open(`https://wa.me/?text=${encodeURIComponent(`${offerTitle} - ${offerUrl}`)}`, '_blank') },
-        { name: 'Mail', icon: Mail, action: () => window.open(`mailto:?subject=${encodeURIComponent(offerTitle)}&body=${encodeURIComponent(`Mira esta oferta: ${offerUrl}`)}`) },
-        { name: 'LinkedIn', icon: Linkedin, action: () => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(offerUrl)}`, '_blank') },
+        { name: 'Copiar Enlace', icon: FaLink, action: () => handleShareAction('enlace') },
+        { name: 'WhatsApp', icon: FaWhatsapp, action: () => window.open(`https://wa.me/?text=${encodeURIComponent(`${offerTitle} - ${offerUrl}`)}`, '_blank') },
+        { name: 'Mail', icon: FaEnvelope, action: () => window.open(`mailto:?subject=${encodeURIComponent(offerTitle)}&body=${encodeURIComponent(`Mira esta oferta: ${offerUrl}`)}`) },
+        { name: 'LinkedIn', icon: FaLinkedin, action: () => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(offerUrl)}`, '_blank') },
     ];
 
     return (
@@ -187,7 +198,7 @@ const DetalleOferta: React.FC = () => {
                                 </div>
 
                                 <div className="flex items-center text-sm text-gray-600 pt-4 border-t border-gray-200">
-                                    <Calendar className="w-4 h-4 mr-2 text-[#003B80]" />
+                                    <FaCalendarAlt className="w-4 h-4 mr-2 text-[#003B80]" />
                                     <span>Publicado: {ofertaData.publicado}</span>
                                 </div>
                             </Card>
@@ -263,27 +274,30 @@ const DetalleOferta: React.FC = () => {
                         >
                             <Card className="hover:shadow-xl transition-shadow duration-300">
                                 <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <Briefcase className="w-5 h-5 text-[#003B80]" />
+                                    <FaBriefcase className="w-5 h-5 text-[#003B80]" />
                                     Información del Puesto
                                 </h3>
+
                                 <div className="space-y-3 mb-6">
                                     <div className="flex items-center justify-between text-gray-700 py-2 border-b border-gray-100">
                                         <span className="flex items-center gap-2 font-medium text-sm">
-                                            <Calendar className="w-4 h-4 text-[#003B80]" />
+                                            <FaCalendarAlt className="w-4 h-4 text-[#003B80]" />
                                             Inicio
                                         </span>
                                         <span className="text-sm">{ofertaData.inicio}</span>
                                     </div>
+
                                     <div className="flex items-center justify-between text-gray-700 py-2 border-b border-gray-100">
                                         <span className="flex items-center gap-2 font-medium text-sm">
-                                            <Clock className="w-4 h-4 text-[#003B80]" />
+                                            <FaClock className="w-4 h-4 text-[#003B80]" />
                                             Duración
                                         </span>
                                         <span className="text-sm">{ofertaData.duracion}</span>
                                     </div>
+
                                     <div className="flex items-center justify-between text-gray-700 py-2">
                                         <span className="flex items-center gap-2 font-medium text-sm">
-                                            <Users className="w-4 h-4 text-[#003B80]" />
+                                            <FaUsers className="w-4 h-4 text-[#003B80]" />
                                             Horas/sem
                                         </span>
                                         <span className="text-sm">{ofertaData.horasSemana}</span>
@@ -305,7 +319,7 @@ const DetalleOferta: React.FC = () => {
                                             className="w-full flex items-center justify-center gap-2"
                                             onClick={toggleShareMenu}
                                         >
-                                            <Share2 className="w-4 h-4" />
+                                            <FaShareAlt className="w-4 h-4" />
                                             Compartir
                                         </Button>
 

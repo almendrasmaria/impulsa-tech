@@ -1,12 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Cookie as CookieIcon, ArrowLeft, Shield, Sliders, BarChart3 } from "lucide-react";
+import {
+  FaCookie,
+  FaArrowLeft,
+  FaShieldAlt,
+  FaSlidersH,
+  FaChartBar
+} from "react-icons/fa"; 
 import { useNavigate } from "react-router-dom";
 import SwitchPersonalizacion from "../components/SwitchPersonalizacion";
 import SwitchRendimiento from "../components/SwitchRendimiento";
 import Card from "../components/Card";
 import Button from "../components/Button";
-
 
 const Cookie: React.FC = () => {
   const navigate = useNavigate();
@@ -23,10 +28,8 @@ const Cookie: React.FC = () => {
             {/* Header */}
             <div className="bg-gradient-to-r from-[#003B80] to-[#0058A3] text-white p-8">
               <div className="flex items-center gap-3 mb-4">
-                <CookieIcon className="w-10 h-10" />
-                <h1 className="font-bold text-3xl">
-                  Políticas de Cookies
-                </h1>
+                <FaCookie className="w-10 h-10" />
+                <h1 className="font-bold text-3xl">Políticas de Cookies</h1>
               </div>
             </div>
 
@@ -63,7 +66,7 @@ const Cookie: React.FC = () => {
                   <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
-                        <Shield className="w-6 h-6 text-[#003B80]" />
+                        <FaShieldAlt className="w-6 h-6 text-[#003B80]" />
                         <p className="font-bold text-[#003B80]">Cookies Esenciales</p>
                       </div>
                       <button className="bg-[#003B80] text-white flex justify-center items-center font-semibold rounded-full h-10 px-6 text-sm">
@@ -94,7 +97,7 @@ const Cookie: React.FC = () => {
                   <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
-                        <Sliders className="w-6 h-6 text-[#003B80]" />
+                        <FaSlidersH className="w-6 h-6 text-[#003B80]" />
                         <p className="font-bold text-[#003B80]">Cookies de Personalización</p>
                       </div>
                       <SwitchPersonalizacion />
@@ -119,7 +122,7 @@ const Cookie: React.FC = () => {
                   <div className="bg-gradient-to-r from-[#E8F0FF] to-white p-4">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
-                        <BarChart3 className="w-6 h-6 text-[#003B80]" />
+                        <FaChartBar className="w-6 h-6 text-[#003B80]" />
                         <p className="font-bold text-[#003B80]">Cookies de Rendimiento</p>
                       </div>
                       <SwitchRendimiento />
@@ -141,7 +144,7 @@ const Cookie: React.FC = () => {
                   onClick={() => navigate("/")}
                   className="bg-[#003B80] hover:bg-[#0058A3] text-white px-8 py-3 rounded-xl font-semibold flex items-center gap-2 transition-colors"
                 >
-                  <ArrowLeft className="w-5 h-5" />
+                  <FaArrowLeft className="w-5 h-5" />
                   Volver al Inicio
                 </Button>
               </div>
